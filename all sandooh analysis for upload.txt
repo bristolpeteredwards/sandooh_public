@@ -1,0 +1,4237 @@
+
+
+  ___  ____  ____  ____  ____ ©
+ /__    /   ____/   /   ____/      17.0
+___/   /   /___/   /   /___/       MP—Parallel Edition
+
+ Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                   StataCorp
+                                   4905 Lakeway Drive
+                                   College Station, Texas 77845 USA
+                                   800-STATA-PC        https://www.stata.com
+                                   979-696-4600        stata@stata.com
+
+#redacted info
+. power twoproportions 0.85, diff(0.05) test(chi2) continuit
+
+Performing iteration ...
+
+Estimated sample sizes for a two-sample proportions test
+Pearson's chi-squared test 
+H0: p2 = p1  versus  Ha: p2 != p1
+
+Study parameters:
+
+        alpha =    0.0500
+        power =    0.8000
+        delta =    0.0500  (difference)
+           p1 =    0.8500
+           p2 =    0.9000
+         diff =    0.0500
+
+Estimated sample sizes:
+
+            N =     1,452
+  N per group =       726
+
+
+
+ ___  ____  ____  ____  ____ ©
+ /__    /   ____/   /   ____/      17.0
+___/   /   /___/   /   /___/       MP—Parallel Edition
+
+ Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                   StataCorp
+                                   4905 Lakeway Drive
+                                   College Station, Texas 77845 USA
+                                   800-STATA-PC        https://www.stata.com
+                                   979-696-4600        stata@stata.com
+
+
+#redacted info
+
+Notes:
+      1. Unicode is supported; see help unicode_advice.
+      2. More than 2 billion observations are allowed; see help obs_advice.
+      3. Maximum number of variables is set to 5,000; see help set_maxvar.
+
+Running REACTED\Stata17\profile.do ...
+
+. do "REDACTED\descriptive stats.do"
+
+. cd "REDACTED\Stata\Final analysis\Reports"
+REDACTED\Stata\Final analysis\Reports
+
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_final.dta", clear
+
+. 
+. asdoc, text(SANDOOH descriptive Statistics) fs(15) save(descriptive_stats) replace
+(file descriptive_stats.doc not found)
+Click to Open File:  descriptive_stats.doc
+
+. 
+. asdoc tab exclusion_reason
+(File descriptive_stats.doc already exists, option append was assumed)
+
+  Screening |
+   comments |      Freq.     Percent        Cum.
+------------+-----------------------------------
+      admin |          4        0.78        0.78
+         ae |         70       13.62       14.40
+       dead |          8        1.56       15.95
+     dental |          2        0.39       16.34
+      empty |        231       44.94       61.28
+         hv |          4        0.78       62.06
+   hv-notes |          2        0.39       62.45
+       meds |         60       11.67       74.12
+    not ooh |         65       12.65       86.77
+   not seen |         44        8.56       95.33
+    shifted |         19        3.70       99.03
+  tx centre |          5        0.97      100.00
+------------+-----------------------------------
+      Total |        514      100.00
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tab exclusion_reason contacttype
+(File descriptive_stats.doc already exists, option append was assumed)
+
+ Screening |           contact_type
+  comments | Telephone  Treatment  Home Visi |     Total
+-----------+---------------------------------+----------
+     admin |         3          0          1 |         4 
+        ae |        40          7         23 |        70 
+      dead |         1          0          7 |         8 
+    dental |         1          1          0 |         2 
+     empty |       169         49         13 |       231 
+        hv |         3          0          1 |         4 
+  hv-notes |         0          0          2 |         2 
+      meds |        41         15          4 |        60 
+   not ooh |        21         14         30 |        65 
+  not seen |        34          2          8 |        44 
+   shifted |         2          7         10 |        19 
+ tx centre |         5          0          0 |         5 
+-----------+---------------------------------+----------
+     Total |       320         95         99 |       514 
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tab2 dateyear exclude, append
+-> tabulation of dateyear by exclude  
+
+           |        Exclude
+  dateyear |         0          1 |     Total
+-----------+----------------------+----------
+      2013 |       145         35 |       180 
+      2014 |       296         64 |       360 
+      2015 |       299         61 |       360 
+      2016 |       298         62 |       360 
+      2017 |       286         74 |       360 
+      2018 |       247        113 |       360 
+      2019 |       270         90 |       360 
+      2020 |        45         15 |        60 
+-----------+----------------------+----------
+     Total |     1,886        514 |     2,400 
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tab2 dateyear exclude, row append
+-> tabulation of dateyear by exclude  
+
++----------------+
+| Key            |
+|----------------|
+|   frequency    |
+| row percentage |
++----------------+
+
+           |        Exclude
+  dateyear |         0          1 |     Total
+-----------+----------------------+----------
+      2013 |       145         35 |       180 
+           |     80.56      19.44 |    100.00 
+-----------+----------------------+----------
+      2014 |       296         64 |       360 
+           |     82.22      17.78 |    100.00 
+-----------+----------------------+----------
+      2015 |       299         61 |       360 
+           |     83.06      16.94 |    100.00 
+-----------+----------------------+----------
+      2016 |       298         62 |       360 
+           |     82.78      17.22 |    100.00 
+-----------+----------------------+----------
+      2017 |       286         74 |       360 
+           |     79.44      20.56 |    100.00 
+-----------+----------------------+----------
+      2018 |       247        113 |       360 
+           |     68.61      31.39 |    100.00 
+-----------+----------------------+----------
+      2019 |       270         90 |       360 
+           |     75.00      25.00 |    100.00 
+-----------+----------------------+----------
+      2020 |        45         15 |        60 
+           |     75.00      25.00 |    100.00 
+-----------+----------------------+----------
+     Total |     1,886        514 |     2,400 
+           |     78.58      21.42 |    100.00 
+Click to Open File:  descriptive_stats.doc
+
+. 
+. 
+. drop if exclude ==1
+(514 observations deleted)
+
+. 
+. *CONSULTATIONS
+. asdoc tab contacttype, missing save(descriptive_stats) append
+
+    contact_type |      Freq.     Percent        Cum.
+-----------------+-----------------------------------
+       Telephone |        480       25.45       25.45
+Treatment Centre |        705       37.38       62.83
+      Home Visit |        701       37.17      100.00
+-----------------+-----------------------------------
+           Total |      1,886      100.00
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tab nurse if contacttype==1, missing
+(File descriptive_stats.doc already exists, option append was assumed)
+
+      nurse |      Freq.     Percent        Cum.
+------------+-----------------------------------
+  TC Doctor |        429       60.85       60.85
+   TC Nurse |        248       35.18       96.03
+          . |         28        3.97      100.00
+------------+-----------------------------------
+      Total |        705      100.00
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tab dateyear, missing save(descriptive_stats) append
+
+   dateyear |      Freq.     Percent        Cum.
+------------+-----------------------------------
+       2013 |        145        7.69        7.69
+       2014 |        296       15.69       23.38
+       2015 |        299       15.85       39.24
+       2016 |        298       15.80       55.04
+       2017 |        286       15.16       70.20
+       2018 |        247       13.10       83.30
+       2019 |        270       14.32       97.61
+       2020 |         45        2.39      100.00
+------------+-----------------------------------
+      Total |      1,886      100.00
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tab2 dateyear contacttype, missing save(descriptive_stats) append
+-> tabulation of dateyear by contacttype  
+
+           |           contact_type
+  dateyear | Telephone  Treatment  Home Visi |     Total
+-----------+---------------------------------+----------
+      2013 |        34         55         56 |       145 
+      2014 |        78        109        109 |       296 
+      2015 |        80        112        107 |       299 
+      2016 |        78        110        110 |       298 
+      2017 |        77        110         99 |       286 
+      2018 |        55         97         95 |       247 
+      2019 |        65         98        107 |       270 
+      2020 |        13         14         18 |        45 
+-----------+---------------------------------+----------
+     Total |       480        705        701 |     1,886 
+Click to Open File:  descriptive_stats.doc
+
+. 
+. *Patients
+. list sandooh_id if pt_id==.
+
+. sum pt_id
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+       pt_id |      1,886    1185.558    680.9255          1       2363
+
+. duplicates tag pt_id, gen(pt_id_contacts)
+
+Duplicates in terms of pt_id
+
+. replace pt_id_contacts = pt_id_contacts+1
+(1,886 real changes made)
+
+. asdoc tab pt_id_contacts
+(File descriptive_stats.doc already exists, option append was assumed)
+
+pt_id_conta |
+        cts |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |      1,840       97.56       97.56
+          2 |         40        2.12       99.68
+          3 |          6        0.32      100.00
+------------+-----------------------------------
+      Total |      1,886      100.00
+Click to Open File:  descriptive_stats.doc
+
+. 
+. duplicates report pt_id
+
+Duplicates in terms of pt_id
+
+--------------------------------------
+   Copies | Observations       Surplus
+----------+---------------------------
+        1 |         1840             0
+        2 |           40            20
+        3 |            6             4
+--------------------------------------
+
+. duplicates drop pt_id, force
+
+Duplicates in terms of pt_id
+
+(24 observations deleted)
+
+. asdoc tab pt_id_contacts
+(File descriptive_stats.doc already exists, option append was assumed)
+
+pt_id_conta |
+        cts |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |      1,840       98.82       98.82
+          2 |         20        1.07       99.89
+          3 |          2        0.11      100.00
+------------+-----------------------------------
+      Total |      1,862      100.00
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tabstat age_y, stat(N min max mean sd median) save(descriptive_stats) append
+
+             |         N        Min        Max       Mean         SD        p50 
+-------------+------------------------------------------------------------------
+       age_y |      1862         16        102   57.75994   24.69726         59 
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tabstat age_y if contacttype==0, stat(N min max mean sd median) save(descriptive_stats) append
+
+             |         N        Min        Max       Mean         SD        p50 
+-------------+------------------------------------------------------------------
+       age_y |       472         16         98   54.41525   24.25329         55 
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tabstat age_y if contacttype==1, stat(N min max mean sd median) save(descriptive_stats) append
+
+             |         N        Min        Max       Mean         SD        p50 
+-------------+------------------------------------------------------------------
+       age_y |       699         16         96   39.83977   16.80906         37 
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tabstat age_y if contacttype==3, stat(N min max mean sd median) save(descriptive_stats) append
+
+             |         N        Min        Max       Mean         SD        p50 
+-------------+------------------------------------------------------------------
+       age_y |       691         18        102   78.17221   14.40574         82 
+Click to Open File:  descriptive_stats.doc
+
+. 
+. 
+. asdoc tab pt_townsend, missing save(descriptive_stats) append
+
+   townsend |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |        219       11.76       11.76
+          2 |        257       13.80       25.56
+          3 |        285       15.31       40.87
+          4 |        354       19.01       59.88
+          5 |        695       37.33       97.21
+          . |         52        2.79      100.00
+------------+-----------------------------------
+      Total |      1,862      100.00
+Click to Open File:  descriptive_stats.doc
+
+. 
+. asdoc tab sex, missing
+(File descriptive_stats.doc already exists, option append was assumed)
+
+        sex |      Freq.     Percent        Cum.
+------------+-----------------------------------
+     Female |      1,171       62.89       62.89
+       Male |        690       37.06       99.95
+          . |          1        0.05      100.00
+------------+-----------------------------------
+      Total |      1,862      100.00
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tab pt_age_cat, missing
+(File descriptive_stats.doc already exists, option append was assumed)
+
+ pt_age_cat |      Freq.     Percent        Cum.
+------------+-----------------------------------
+      16-34 |        460       24.70       24.70
+      35-64 |        567       30.45       55.16
+       >=65 |        835       44.84      100.00
+------------+-----------------------------------
+      Total |      1,862      100.00
+Click to Open File:  descriptive_stats.doc
+
+. 
+. *Clinicians
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_final.dta", clear
+
+. drop if exclude ==1
+(514 observations deleted)
+
+. asdoc sum sandooh_id if clinician_id==.
+(File descriptive_stats.doc already exists, option append was assumed)
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+  sandooh_id |          5       491.4    14.09965        470        507
+Click to Open File:  descriptive_stats.doc
+
+. drop if clinician_id==.
+(5 observations deleted)
+
+. asdoc sum clinician_id
+(File descriptive_stats.doc already exists, option append was assumed)
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+clinician_id |      1,881    195.4104    113.7275          1        391
+Click to Open File:  descriptive_stats.doc
+
+. duplicates report clinician_id
+
+Duplicates in terms of clinician_id
+
+--------------------------------------
+   Copies | Observations       Surplus
+----------+---------------------------
+        1 |          148             0
+        2 |          114            57
+        3 |           81            54
+        4 |          100            75
+        5 |           55            44
+        6 |           72            60
+        7 |           56            48
+        8 |           32            28
+        9 |           36            32
+       10 |           60            54
+       11 |           33            30
+       12 |           36            33
+       13 |           78            72
+       14 |           42            39
+       15 |          120           112
+       16 |           16            15
+       18 |           18            17
+       19 |           38            36
+       20 |           20            19
+       21 |           21            20
+       22 |           66            63
+       23 |           46            44
+       26 |           26            25
+       28 |           56            54
+       29 |           87            84
+       32 |           32            31
+       34 |           68            66
+       35 |           35            34
+       37 |           74            72
+       41 |           41            40
+       42 |           42            41
+       44 |          132           129
+--------------------------------------
+
+. duplicates tag clinician_id, gen(clinician_id_contacts)
+
+Duplicates in terms of clinician_id
+
+. replace clinician_id_contacts = clinician_id_contacts+1
+(1,881 real changes made)
+
+. tab clinician_id_contacts
+
+clinician_i |
+ d_contacts |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |        148        7.87        7.87
+          2 |        114        6.06       13.93
+          3 |         81        4.31       18.23
+          4 |        100        5.32       23.55
+          5 |         55        2.92       26.48
+          6 |         72        3.83       30.30
+          7 |         56        2.98       33.28
+          8 |         32        1.70       34.98
+          9 |         36        1.91       36.90
+         10 |         60        3.19       40.09
+         11 |         33        1.75       41.84
+         12 |         36        1.91       43.75
+         13 |         78        4.15       47.90
+         14 |         42        2.23       50.13
+         15 |        120        6.38       56.51
+         16 |         16        0.85       57.36
+         18 |         18        0.96       58.32
+         19 |         38        2.02       60.34
+         20 |         20        1.06       61.40
+         21 |         21        1.12       62.52
+         22 |         66        3.51       66.03
+         23 |         46        2.45       68.47
+         26 |         26        1.38       69.86
+         28 |         56        2.98       72.83
+         29 |         87        4.63       77.46
+         32 |         32        1.70       79.16
+         34 |         68        3.62       82.78
+         35 |         35        1.86       84.64
+         37 |         74        3.93       88.57
+         41 |         41        2.18       90.75
+         42 |         42        2.23       92.98
+         44 |        132        7.02      100.00
+------------+-----------------------------------
+      Total |      1,881      100.00
+
+. duplicates drop clinician_id, force
+
+Duplicates in terms of clinician_id
+
+(1,528 observations deleted)
+
+. asdoc tab clinician_id_contacts
+(File descriptive_stats.doc already exists, option append was assumed)
+
+clinician_i |
+ d_contacts |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |        148       41.93       41.93
+          2 |         57       16.15       58.07
+          3 |         27        7.65       65.72
+          4 |         25        7.08       72.80
+          5 |         11        3.12       75.92
+          6 |         12        3.40       79.32
+          7 |          8        2.27       81.59
+          8 |          4        1.13       82.72
+          9 |          4        1.13       83.85
+         10 |          6        1.70       85.55
+         11 |          3        0.85       86.40
+         12 |          3        0.85       87.25
+         13 |          6        1.70       88.95
+         14 |          3        0.85       89.80
+         15 |          8        2.27       92.07
+         16 |          1        0.28       92.35
+         18 |          1        0.28       92.63
+         19 |          2        0.57       93.20
+         20 |          1        0.28       93.48
+         21 |          1        0.28       93.77
+         22 |          3        0.85       94.62
+         23 |          2        0.57       95.18
+         26 |          1        0.28       95.47
+         28 |          2        0.57       96.03
+         29 |          3        0.85       96.88
+         32 |          1        0.28       97.17
+         34 |          2        0.57       97.73
+         35 |          1        0.28       98.02
+         37 |          2        0.57       98.58
+         41 |          1        0.28       98.87
+         42 |          1        0.28       99.15
+         44 |          3        0.85      100.00
+------------+-----------------------------------
+      Total |        353      100.00
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tabstat clinician_id_contacts, stat(N min max mean sd median) save(descriptive_stats) append
+
+             |         N        Min        Max       Mean         SD        p50 
+-------------+------------------------------------------------------------------
+clinician_~s |       353          1         44   5.328612   8.161001          2 
+Click to Open File:  descriptive_stats.doc
+
+. 
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_final.dta", clear
+
+. drop if exclude ==1
+(514 observations deleted)
+
+. asdoc tab any_sna
+(File descriptive_stats.doc already exists, option append was assumed)
+
+SNA Present |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        414       21.95       21.95
+          1 |      1,472       78.05      100.00
+------------+-----------------------------------
+      Total |      1,886      100.00
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tab any_fu
+(File descriptive_stats.doc already exists, option append was assumed)
+
+Follow up present |      Freq.     Percent        Cum.
+------------------+-----------------------------------
+     No follow-up |      1,055       55.94       55.94
+Follow-up present |        831       44.06      100.00
+------------------+-----------------------------------
+            Total |      1,886      100.00
+Click to Open File:  descriptive_stats.doc
+
+. asdoc tab any_sna_or_fu
+(File descriptive_stats.doc already exists, option append was assumed)
+
+any_sna_or_ |
+         fu |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        168        8.91        8.91
+          1 |      1,718       91.09      100.00
+------------+-----------------------------------
+      Total |      1,886      100.00
+Click to Open File:  descriptive_stats.doc
+
+. 
+. asdoc tab any_sna if dateyear >2013  & dateyear <2016
+(File descriptive_stats.doc already exists, option append was assumed)
+
+SNA Present |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        133       22.35       22.35
+          1 |        462       77.65      100.00
+------------+-----------------------------------
+      Total |        595      100.00
+Click to Open File:  descriptive_stats.doc
+
+. 
+. 
+end of do-file
+
+. 
+  ___  ____  ____  ____  ____ ©
+ /__    /   ____/   /   ____/      17.0
+___/   /   /___/   /   /___/       MP—Parallel Edition
+
+ Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                   StataCorp
+                                   4905 Lakeway Drive
+                                   College Station, Texas 77845 USA
+                                   800-STATA-PC        https://www.stata.com
+                                   979-696-4600        stata@stata.com
+
+#redacted
+
+Running \Stata17\profile.do ...
+
+. doedit "REDACTED\extra_models_for_text.do" 
+
+. do "REDACTED\STD2358_000000.tmp"
+
+. 
+. cd "REDACTED\Stata\Final analysis\Reports"
+REDACTED\Stata\Final analysis\Reports
+
+. 
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_final.dta", clear
+
+. drop if exclude ==1
+(514 observations deleted)
+
+. asdoc, text(SANDOOH Models extra_for_text) fs(15) save(extra_for_text) replace
+(file extra_for_text.doc not found)
+Click to Open File:  extra_for_text.doc
+
+. 
+. *Contact type with treatment centre as baseline
+. quietly xi: melogit any_sna i.contact_type2 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Contact_type                                                                     
+  1. Treatment Centre*                    705           1                                
+  2. Telephone                            480        0.39        (0.29 to 0.52)    <0.001
+  3. Home Visit                           701        0.56        (0.43 to 0.74)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  extra_for_text.doc
+
+. 
+. list contacttype if mental_health  ==3
+
+      +-----------+
+      | con~ttype |
+      |-----------|
+ 213. | Telephone |
+      +-----------+
+
+. drop if mental_health==3
+(1 observation deleted)
+
+. *as n=1 and messes up reformat code when variable excluded 
+. 
+. *nurse vs doctor at tc
+. asdoc  tab nurse any_sna
+(File extra_for_text.doc already exists, option append was assumed)
+
+           |      SNA Present
+     nurse |         0          1 |     Total
+-----------+----------------------+----------
+ TC Doctor |        67        362 |       429 
+  TC Nurse |        30        218 |       248 
+-----------+----------------------+----------
+     Total |        97        580 |       677 
+Click to Open File:  extra_for_text.doc
+
+. quietly xi: logit any_sna i.nurse 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=677
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Nurse                                                                            
+  TC Doctor*                              429           1                                
+  TC Nurse                                248        1.34        (0.85 to 2.14)     0.209
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  extra_for_text.doc
+
+. 
+. *multivariable nurse tc centre
+. quietly xi: melogit any_sna i.nurse dateyear i.season i.any_fu i.prescription_bin i.infection i.mental_health i.pt_65 i.sex i.pt_townsend || clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: any_sna (SNA Present), n=657
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Nurse                                                                            
+  TC Doctor*                              421           1                                
+  TC Nurse                                236        1.64        (0.84 to 3.19)     0.148
+Dateyear                                                                         
+  per unit                                657        1.26        (1.05 to 1.51)     0.014
+Season                                                                           
+  Winter*                                 173           1                                
+  Spring                                  151        1.58        (0.68 to 3.64)     0.287
+  Summer                                  159        2.19        (0.92 to 5.20)     0.076
+  Autumn                                  174        2.99        (1.26 to 7.09)     0.013
+Follow up present                                                                
+  No follow-up*                           405           1                                
+  Follow-up present                       252        0.31        (0.16 to 0.61)     0.001
+Prescription_bin                                                                 
+  No prescription issued*                 164           1                                
+  Prescription issued                     493        0.99        (0.46 to 2.13)     0.980
+Infection                                                                        
+  Not possible infection*                 277           1                                
+  Possible Infection                      380        1.34        (0.69 to 2.59)     0.391
+Mental_health                                                                    
+  Physical health problems*               642           1                                
+  Mental health only                       11        0.04        (0.00 to 0.32)     0.003
+  Mental & physical health                  4        0.37        (0.02 to 5.95)     0.482
+Patient Age                                                                      
+  16-64 Years*                            598           1                                
+  65+ Years                                59        0.74        (0.26 to 2.08)     0.565
+Sex                                                                              
+  Female*                                 432           1                                
+  Male                                    225        1.03        (0.55 to 1.96)     0.919
+Townsend                                                                         
+  1*                                       67           1                                
+  2                                        86        0.46        (0.09 to 2.27)     0.342
+  3                                        87        0.22        (0.05 to 0.94)     0.041
+  4                                       117        0.32        (0.07 to 1.41)     0.132
+  5                                       300        0.15        (0.04 to 0.58)     0.006
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  extra_for_text.doc
+
+. 
+. *specific nurse univariable
+. asdoc  tab nurse sna_specific_bin
+(File extra_for_text.doc already exists, option append was assumed)
+
+           |   sna_specific_bin
+     nurse |         0          1 |     Total
+-----------+----------------------+----------
+ TC Doctor |       184        178 |       362 
+  TC Nurse |       106        112 |       218 
+-----------+----------------------+----------
+     Total |       290        290 |       580 
+Click to Open File:  extra_for_text.doc
+
+. quietly xi: logit sna_specific_bin i.nurse 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+LOGIT formatted output
+
+Outcome variable: sna_specific_bin , n=580
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Nurse                                                                            
+  TC Doctor*                              362           1                                
+  TC Nurse                                218        1.09        (0.78 to 1.53)     0.607
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  extra_for_text.doc
+
+
+. *no of sx nurse univariable
+. asdoc sum sna_no_sx if nurse ==0 & any_sna==1
+(File extra_for_text.doc already exists, option append was assumed)
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+   sna_no_sx |        362    2.831492    2.095187          1         12
+Click to Open File:  extra_for_text.doc
+
+. asdoc sum sna_no_sx if nurse ==1 & any_sna==1
+(File extra_for_text.doc already exists, option append was assumed)
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+   sna_no_sx |        218    2.949541    2.027967          1          9
+Click to Open File:  extra_for_text.doc
+
+. asdoc regress sna_no_sx i.nurse if any_sna==1
+(File extra_for_text.doc already exists, option append was assumed)
+
+      Source |       SS           df       MS      Number of obs   =       580
+-------------+----------------------------------   F(1, 578)       =      0.44
+       Model |  1.89612036         1  1.89612036   Prob > F        =    0.5062
+    Residual |  2477.16595       578  4.28575424   R-squared       =    0.0008
+-------------+----------------------------------   Adj R-squared   =   -0.0010
+       Total |  2479.06207       579  4.28162706   Root MSE        =    2.0702
+
+------------------------------------------------------------------------------
+   sna_no_sx | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+       nurse |
+   TC Nurse  |   .1180496   .1774782     0.67   0.506    -.2305313    .4666304
+       _cons |   2.831492   .1088076    26.02   0.000     2.617785    3.045198
+------------------------------------------------------------------------------
+Click to Open File:  extra_for_text.doc
+. 
+. 
+. ************** SNA WITH TIME *********************
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_final.dta", clear
+
+. drop if exclude ==1
+(514 observations deleted)
+
+. 
+. asdoc tab dateyear any_sna
+(File extra_for_text.doc already exists, option append was assumed)
+
+           |      SNA Present
+  dateyear |         0          1 |     Total
+-----------+----------------------+----------
+      2013 |        41        104 |       145 
+      2014 |        72        224 |       296 
+      2015 |        61        238 |       299 
+      2016 |        65        233 |       298 
+      2017 |        69        217 |       286 
+      2018 |        48        199 |       247 
+      2019 |        50        220 |       270 
+      2020 |         8         37 |        45 
+-----------+----------------------+----------
+     Total |       414      1,472 |     1,886 
+Click to Open File:  extra_for_text.doc
+
+. 
+. *specific all
+. asdoc tab dateyear sna_specific_bin
+(File extra_for_text.doc already exists, option append was assumed)
+
+           |   sna_specific_bin
+  dateyear |         0          1 |     Total
+-----------+----------------------+----------
+      2013 |        67         37 |       104 
+      2014 |       137         87 |       224 
+      2015 |       130        108 |       238 
+      2016 |       121        112 |       233 
+      2017 |       112        105 |       217 
+      2018 |       103         96 |       199 
+      2019 |        85        135 |       220 
+      2020 |        19         18 |        37 
+-----------+----------------------+----------
+     Total |       774        698 |     1,472 
+Click to Open File:  extra_for_text.doc
+
+. quietly xi: logit sna_specific_bin dateyear, or
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+LOGIT formatted output
+
+Outcome variable: sna_specific_bin , n=1472
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1472        1.14        (1.08 to 1.20)    <0.001
+-----------------------------------------------------------------------------------------
+Click to Open File:  extra_for_text.doc
+
+. 
+. *specific univariable with clusters
+. quietly xi: melogit sna_specific_bin dateyear || clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: sna_specific_bin , n=1468
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1468        1.13        (1.05 to 1.22)     0.001
+-----------------------------------------------------------------------------------------
+Click to Open File:  extra_for_text.doc
+
+. 
+. *no of symptoms all/ time
+. asdoc tab dateyear, sum(sna_no_sx)
+(File extra_for_text.doc already exists, option append was assumed)
+
+   dateyear |      Freq.     Percent        Cum.
+------------+-----------------------------------
+       2013 |        145        7.69        7.69
+       2014 |        296       15.69       23.38
+       2015 |        299       15.85       39.24
+       2016 |        298       15.80       55.04
+       2017 |        286       15.16       70.20
+       2018 |        247       13.10       83.30
+       2019 |        270       14.32       97.61
+       2020 |         45        2.39      100.00
+------------+-----------------------------------
+      Total |      1,886      100.00
+Click to Open File:  extra_for_text.doc
+
+. quietly xi: regress sna_no_sx dateyear if any_sna==1
+
+. asdoc reformat, output(necp) dpp(3) dpcoef(2) append cw(35)
+
+REGRESS formatted output
+
+Outcome variable: sna_no_sx (snx_no_sx), n=1472
+-----------------------------------------------------------------------------------------
+Covariate                                   N       Coef.    95% Conf. Interval     P>|t|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1472        0.15        (0.10 to 0.20)    <0.001
+Constant                                 1472     -298.34  (-402.58 to -194.10)    <0.001
+-----------------------------------------------------------------------------------------
+Click to Open File:  extra_for_text.doc
+
+. 
+. *no of symptoms all/ time CLUSTERING
+. quietly xi: meglm sna_no_sx dateyear if any_sna==1 || clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) dpcoef(2) append cw(35)
+
+GSEM formatted output
+
+Outcome variable: sna_no_sx (snx_no_sx), n=1468
+-----------------------------------------------------------------------------------------
+Covariate                                   N       Coef.    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1468        0.11        (0.06 to 0.15)    <0.001
+Constant                                 1468     -214.19  (-306.35 to -122.03)    <0.001
+-----------------------------------------------------------------------------------------
+Click to Open File:  extra_for_text.doc
+
+. 
+. *multivariable modelling (not used in manuscript)
+. drop if mental_health ==3
+(1 observation deleted)
+
+. quietly xi: meglm sna_no_sx  dateyear i.any_fu i.pt_65 i.sex i.pt_townsend i.infection i.mental_health if any_sna==1|| clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) dpcoef(2) append cw(35)
+
+GSEM formatted output
+
+Outcome variable: sna_no_sx (snx_no_sx), n=1420
+-----------------------------------------------------------------------------------------
+Covariate                                   N       Coef.    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1420        0.10        (0.05 to 0.14)    <0.001
+Follow up present                                                                
+  No follow-up*                           857           0                                
+  Follow-up present                       563       -0.14       (-0.31 to 0.04)     0.123
+Patient Age                                                                      
+  16-64 Years*                            812           0                                
+  65+ Years                               608       -0.23      (-0.40 to -0.05)     0.013
+Sex                                                                              
+  Female*                                 900           0                                
+  Male                                    520       -0.06       (-0.22 to 0.10)     0.464
+Townsend                                                                         
+  1*                                      178           0                                
+  2                                       205        0.14       (-0.17 to 0.44)     0.378
+  3                                       215        0.04       (-0.26 to 0.33)     0.815
+  4                                       277        0.15       (-0.14 to 0.44)     0.317
+  5                                       545        0.05       (-0.21 to 0.32)     0.707
+Infection                                                                        
+  Not possible infection*                 711           0                                
+  Possible Infection                      709        0.08       (-0.08 to 0.24)     0.323
+Mental_health                                                                    
+  Physical health problems*              1382           0                                
+  Mental health only                       31       -0.55       (-1.12 to 0.01)     0.053
+  Mental & physical health                  7       -0.45       (-1.53 to 0.64)     0.420
+Constant                                 1420     -194.20  (-287.67 to -100.73)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  extra_for_text.doc
+
+. 
+. asdoc, text(2014-15 for discussion) fs(15) save(discussion_extra) replace
+(file discussion_extra.doc not found)
+Click to Open File:  discussion_extra.doc
+
+. 
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_final.dta", clear
+
+. drop if exclude ==1
+(514 observations deleted)
+
+. asdoc, text(2014-15 data) fs(15) save(extra_for_text) 
+(File extra_for_text.doc already exists, option append was assumed)
+Click to Open File:  extra_for_text.doc
+
+. asdoc tab any_sna if dateyear >=2014 & dateyear <= 2015
+(File extra_for_text.doc already exists, option append was assumed)
+
+SNA Present |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        133       22.35       22.35
+          1 |        462       77.65      100.00
+------------+-----------------------------------
+      Total |        595      100.00
+Click to Open File:  extra_for_text.doc
+
+. 
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_problems.dta", clear
+
+. asdoc tab any_sna if dateyear >=2014 & dateyear <= 2015
+(File extra_for_text.doc already exists, option append was assumed)
+
+SNA Present |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        149       23.03       23.03
+          1 |        498       76.97      100.00
+------------+-----------------------------------
+      Total |        647      100.00
+Click to Open File:  extra_for_text.doc
+
+. 
+. use "REDACTED\Stata\Final analysis\Dta\sancot_by_problems_final.dta", clear
+
+. gen sna_specific_bin = 0 if sna_specific=="Generic only"
+(734 missing values generated)
+
+. replace sna_specific_bin = 1 if sna_specific =="Both G&S"
+(537 real changes made)
+
+. replace sna_specific_bin = 1 if sna_specific =="Specific only"
+(197 real changes made)
+
+. merge m:1 sandooh_id using "REDACTED\Stata\Final analysis\Dta\sandooh_datayear.dta"
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                           928
+        from master                         0  (_merge==1)
+        from using                        928  (_merge==2)
+
+    Matched                             1,588  (_merge==3)
+    -----------------------------------------
+
+
+. drop if _merge==2
+(928 observations deleted)
+
+
+. asdoc tab sna_specific_bin if dateyear >=2014 & dateyear <= 2015
+(File extra_for_text.doc already exists, option append was assumed)
+
+sna_specifi |
+      c_bin |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        292       58.52       58.52
+          1 |        207       41.48      100.00
+------------+-----------------------------------
+      Total |        499      100.00
+Click to Open File:  extra_for_text.doc
+
+. 
+. asdoc tabstat sna_no_sx if dateyear >=2014 & dateyear <= 2015, stat(N min max mean sd median) 
+(File extra_for_text.doc already exists, option append was assumed)
+
+             |         N        Min        Max       Mean         SD        p50 
+-------------+------------------------------------------------------------------
+   sna_no_sx |       499          1         12   2.322645   1.753398          2 
+Click to Open File:  extra_for_text.doc
+
+. 
+. 
+. *** RESP INFECTIONS
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_final.dta", clear
+
+. drop if exclude ==1
+(514 observations deleted)
+
+. quietly xi: melogit any_sna dateyear i.season i.contacttype i.any_fu i.prescription_bin  i.pt_65 i.sex i.pt_townsend if resp_infection==1  || clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: any_sna (SNA Present), n=299
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                                299        1.34        (0.98 to 1.84)     0.067
+Season                                                                           
+  Winter*                                 114           1                                
+  Spring                                   62       10.02       (1.62 to 62.10)     0.013
+  Summer                                   64        6.18       (1.06 to 36.00)     0.043
+  Autumn                                   59        5.23       (0.87 to 31.27)     0.070
+Contact_type                                                                     
+  Telephone*                               33           1                                
+  Treatment Centre                        154        0.75        (0.08 to 7.19)     0.803
+  Home Visit                              112        0.63        (0.07 to 6.03)     0.688
+Follow up present                                                                
+  No follow-up*                           207           1                                
+  Follow-up present                        92        1.41        (0.36 to 5.55)     0.627
+Prescription_bin                                                                 
+  No prescription issued*                 119           1                                
+  Prescription issued                     180        2.89       (0.71 to 11.80)     0.138
+Patient Age                                                                      
+  16-64 Years*                            185           1                                
+  65+ Years                               114        1.10        (0.21 to 5.82)     0.907
+Sex                                                                              
+  Female*                                 190           1                                
+  Male                                    109        4.70       (0.98 to 22.70)     0.054
+Townsend                                                                         
+  1*                                       25           1                                
+  2                                        37        0.70        (0.07 to 7.35)     0.769
+  3                                        56        2.57       (0.29 to 23.10)     0.400
+  4                                        53        2.67       (0.24 to 29.51)     0.424
+  5                                       128        1.53       (0.20 to 11.95)     0.683
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  extra_for_text.doc
+
+. test _Ipt_townse_2 _Ipt_townse_3 _Ipt_townse_4 _Ipt_townse_5
+
+ ( 1)  [any_sna]_Ipt_townse_2 = 0
+ ( 2)  [any_sna]_Ipt_townse_3 = 0
+ ( 3)  [any_sna]_Ipt_townse_4 = 0
+ ( 4)  [any_sna]_Ipt_townse_5 = 0
+
+           chi2(  4) =    2.11
+         Prob > chi2 =    0.7159
+
+. *note pt 65 attenuated in multivariable due to contact type
+. 
+. 
+end of do-file
+
+. 
+  ___  ____  ____  ____  ____ ©
+ /__    /   ____/   /   ____/      17.0
+___/   /   /___/   /   /___/       MP—Parallel Edition
+
+ Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                   StataCorp
+                                   4905 Lakeway Drive
+                                   College Station, Texas 77845 USA
+                                   800-STATA-PC        https://www.stata.com
+                                   979-696-4600        stata@stata.com
+
+
+Running \Stata17\profile.do ...
+
+. doedit "REDACTED\figure 1 graphs final used.do" 
+
+. do "REDACTED"
+
+. cd "REDACTED\Stata\Final analysis\Reports"
+REDACTED\Stata\Final analysis\Reports
+
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_final.dta", clear
+
+. drop if exclude ==1
+(514 observations deleted)
+
+. drop exclusion_reason
+
+. drop if pos_not_seen ==1
+(0 observations deleted)
+
+. tab pos_not_seen
+
+pos_not_see |
+          n |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,886      100.00      100.00
+------------+-----------------------------------
+      Total |      1,886      100.00
+
+. 
+. sort dateyear
+
+. egen mean_sna_year_all = mean(any_sna), by(dateyear)
+
+. egen mean_sna_year_tel = mean(any_sna) if contacttype==0, by(dateyear) 
+(1,406 missing values generated)
+
+. egen mean_sna_year_tc = mean(any_sna) if contacttype==1, by(dateyear)
+(1,181 missing values generated)
+
+. egen mean_sna_year_hv = mean(any_sna) if contacttype==3, by(dateyear)
+(1,185 missing values generated)
+
+. 
+. replace  mean_sna_year_all = mean_sna_year_all*100
+(1,886 real changes made)
+
+. replace  mean_sna_year_tel = mean_sna_year_tel*100
+(480 real changes made)
+
+. replace  mean_sna_year_tc = mean_sna_year_tc*100
+(705 real changes made)
+
+. replace  mean_sna_year_hv = mean_sna_year_hv*100
+(701 real changes made)
+
+. 
+. gen any_sna_100 = any_sna*100
+
+. 
+. egen mean_sna_specific_year_all = mean(sna_specific_bin), by(dateyear)
+
+. egen mean_sna_specific_year_tel = mean(sna_specific_bin) if contacttype==0, by(dateyear) 
+(1,406 missing values generated)
+
+. egen mean_sna_specific_year_tc = mean(sna_specific_bin) if contacttype==1, by(dateyear)
+(1,181 missing values generated)
+
+. egen mean_sna_specific_year_hv = mean(sna_specific_bin) if contacttype==3, by(dateyear)
+(1,185 missing values generated)
+
+. 
+. replace  mean_sna_specific_year_all = mean_sna_specific_year_all*100
+(1,886 real changes made)
+
+. replace  mean_sna_specific_year_tel = mean_sna_specific_year_tel*100
+(480 real changes made)
+
+. replace  mean_sna_specific_year_tc = mean_sna_specific_year_tc*100
+(705 real changes made)
+
+. replace  mean_sna_specific_year_hv = mean_sna_specific_year_hv*100
+(701 real changes made)
+
+. 
+. gen sna_specific_100 = sna_specific_bin*100
+(414 missing values generated)
+
+. 
+. egen mean_sna_sx_year_all = mean(sna_no_sx), by(dateyear)
+
+. egen mean_sna_sx_year_tel = mean(sna_no_sx) if contacttype==0, by(dateyear) 
+(1,406 missing values generated)
+
+. egen mean_sna_sx_year_tc = mean(sna_no_sx) if contacttype==1, by(dateyear)
+(1,181 missing values generated)
+
+. egen mean_sna_sx_year_hv = mean(sna_no_sx) if contacttype==3, by(dateyear)
+(1,185 missing values generated)
+
+. 
+. 
+. 
+. *all consultations with SNA
+. twoway connected mean_sna_year_all dateyear, lcolor(black%0) mcolor(black) msize(0.5) mlabel(mean_sna_year_all) mlabposition(12) mlabgap(3) mlabformat(%9.1f)  mlabsize(medsmall) ///
+> || lfitci any_sna_100 dateyear, lcolor(black) acolor(black%30) alcolor(%0) ///
+> xtitle("Year", margin(large)) ///
+> ytitle("Consultations with SNA (%)", margin(small)) ///
+> title("Consultations with SNA") ///
+> ylabel(50(10)100) ymtick(50(10)100) ///
+> xlabel(2013(1)2020, angle(50)) xmtick(2013(1)2020) ///
+> ,leg(off) name(graph1, replace)
+
+. 
+. *consultations that contain SNA with specific advice
+. twoway connected mean_sna_specific_year_all dateyear, lcolor(black%0) mcolor(black) msize(0.5) mlabel(mean_sna_specific_year_all) mlabposition(12) mlabgap(2) mlabformat(%9.1f) mlabs
+> ize(medsmall) ///
+> || lfitci sna_specific_100 dateyear, lcolor(black) acolor(black%30) alcolor(%0) ///
+> xtitle("Year", margin(large)) ///
+> ytitle("SNA with specific advice (%)", margin(small)) ///
+> title("SNA that contains specific advice") ///
+> ylabel(10(10)60) ymtick(10(10)60) ///
+> xlabel(2013(1)2020, angle(50)) xmtick(2013(1)2020) ///
+> ,leg(off) name(graph2, replace)
+
+. 
+. *all consultations number of sx
+. twoway connected mean_sna_sx_year_all dateyear, lcolor(black%0) mcolor(black) msize(0.5) mlabel(mean_sna_sx_year_all)  mlabposition(12) mlabgap(2) mlabformat(%9.2f) mlabsize(medsmal
+> l) ///
+> || lfitci sna_no_sx dateyear, lcolor(black) acolor(black%30) alcolor(%0) ///
+> xtitle("Year", margin(large)) ///
+> ytitle("Number of symptoms in SNA", margin(small)) ///
+> title("Number of symptoms in SNA") ///
+> ylabel(1(0.5)4) ymtick(1(0.5)4) ///
+> xlabel(2013(1)2020, angle(50)) xmtick(2013(1)2020) ///
+> ,leg(off) name(graph3, replace)
+
+. 
+. 
+. *all consultations number of sx with legend
+. twoway connected mean_sna_sx_year_all dateyear, lcolor(black%0) mcolor(black) msize(0.5) mlabel(mean_sna_sx_year_all)  mlabposition(12) mlabgap(2) mlabformat(%9.2f) ///
+> || lfitci sna_no_sx dateyear, lcolor(black) acolor(black%30) alcolor(%0) ///
+> xtitle("Year", margin(large)) ///
+> ytitle("Number of symptoms in SNA", margin(small)) ///
+> title("Number of symptoms in SNA") ///
+> ylabel(1(1)4) ymtick(1(1)4) ///
+> xlabel(2013(1)2020, angle(50)) xmtick(2013(1)2020) ///
+> legend(lab(1 "Mean average per year")) ///
+> legend(lab(2 "95% Confidence interval")) ///
+> legend(lab(3 "Linear fit")) 
+
+. 
+. graph combine graph1 graph2 graph3, ycommon title("Safety-netting advice per year")
+
+. 
+. *in the end i chose to manually merge the 3 graphs together
+. 
+end of do-file
+
+. 
+  ___  ____  ____  ____  ____ ©
+ /__    /   ____/   /   ____/      17.0
+___/   /   /___/   /   /___/       MP—Parallel Edition
+
+ Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                   StataCorp
+                                   4905 Lakeway Drive
+                                   College Station, Texas 77845 USA
+                                   800-STATA-PC        https://www.stata.com
+                                   979-696-4600        stata@stata.com
+
+#redated
+
+Running \Stata17\profile.do ...
+
+. do "REDACTED\Do\all_irr_results.do"
+
+. clear
+
+. cd "REDACTED\Reports"
+REDACTED\Reports
+
+. use "REDACTED\Dta\irr_screening.dta"
+
+. 
+. asdoc, text(SANDOOH IRR Results) fs(15) save(IRR results) replace
+(file IRR results.doc not found)
+Click to Open File:  IRR results.doc
+
+. 
+. asdoc tab exclude
+(File IRR results.doc already exists, option append was assumed)
+
+    Exclude |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |         87       87.00       87.00
+          1 |         13       13.00      100.00
+------------+-----------------------------------
+      Total |        100      100.00
+Click to Open File:  IRR results.doc
+
+. *sna presence / absence results
+. asdoc kap pe_sna sf_sna if exclude==0, tab
+(File IRR results.doc already exists, option append was assumed)
+
+           |        SF_SNA
+    PE_SNA |         0          1 |     Total
+-----------+----------------------+----------
+         0 |        18          0 |        18 
+         1 |         2         67 |        69 
+-----------+----------------------+----------
+     Total |        20         67 |        87 
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  97.70%      65.83%     0.9327     0.1070       8.72      0.0000
+Click to Open File:  IRR results.doc
+
+. 
+. *fu presence / absence (all types of fu) results
+. asdoc kap pe_fu_any_bin sf_fu_any_bin if exclude==0, tab
+(File IRR results.doc already exists, option append was assumed)
+
+PE_fu_any_ |     SF_fu_any_bin
+       bin |         0          1 |     Total
+-----------+----------------------+----------
+         0 |        41          1 |        42 
+         1 |         7         38 |        45 
+-----------+----------------------+----------
+     Total |        48         39 |        87 
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  90.80%      49.82%     0.8167     0.1062       7.69      0.0000
+Click to Open File:  IRR results.doc
+
+. 
+. 
+. *** FULL CODING *****
+. 
+. use "REDACTED\Dta\full_coding_irr.dta", clear
+
+. 
+. asdoc, text(SANDOOH IRR full coding) fs(15) append
+Click to Open File:  IRR results.doc
+
+. 
+. asdoc kap _pe_sna_applies _sf_sna_applies, tab
+(File IRR results.doc already exists, option append was assumed)
+
+                      |          sf_sna_applies
+       pe_sna_applies | Both (oft  Problem o  Treatment |     Total
+----------------------+---------------------------------+----------
+ Both (often generic) |        24          6          0 |        30 
+         Problem only |        12         26          1 |        39 
+Treatment / plan only |         0          0          0 |         0 
+----------------------+---------------------------------+----------
+                Total |        36         32          1 |        69 
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  72.46%      48.90%     0.4612     0.1157       3.98      0.0000
+Click to Open File:  IRR results.doc
+
+. kapwgt applies 1 \ 0.5 1 \ 0 0.5 1
+
+. asdoc kap _pe_sna_applies _sf_sna_applies, tab wgt(applies)
+(File IRR results.doc already exists, option append was assumed)
+
+                      |          sf_sna_applies
+       pe_sna_applies | Both (oft  Problem o  Treatment |     Total
+----------------------+---------------------------------+----------
+ Both (often generic) |        24          6          0 |        30 
+         Problem only |        12         26          1 |        39 
+Treatment / plan only |         0          0          0 |         0 
+----------------------+---------------------------------+----------
+                Total |        36         32          1 |        69 
+Ratings weighted by:
+   1.0000   0.5000   0.0000
+   0.5000   1.0000   0.5000
+   0.0000   0.5000   1.0000
+
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  86.23%      74.13%     0.4677     0.1153       4.06      0.0000
+Click to Open File:  IRR results.doc
+
+. 
+. asdoc kap _pe_sna_format _sf_sna_format, tab
+(File IRR results.doc already exists, option append was assumed)
+
+                      |     sf_sna_format
+        pe_sna_format | Symptom /  Symptom / |     Total
+----------------------+----------------------+----------
+Symptom / conditional |         4          0 |         4 
+Symptom / conditional |         0         65 |        65 
+----------------------+----------------------+----------
+                Total |         4         65 |        69 
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+ 100.00%      89.08%     1.0000     0.1204       8.31      0.0000
+Click to Open File:  IRR results.doc
+
+. 
+. asdoc kap pe_count_sx sf_count_sx, tab
+(File IRR results.doc already exists, option append was assumed)
+
+pe_count_s |                                                  sf_count_sx
+         x |         0          1          2          3          4          5          6          7          8         10 |     Total
+-----------+--------------------------------------------------------------------------------------------------------------+----------
+         0 |         0          1          0          0          0          0          0          0          0          0 |         1 
+         1 |         1         29          0          0          0          0          0          0          0          0 |        30 
+         2 |         0          0         12          2          0          0          0          1          0          0 |        15 
+         3 |         0          1          0          6          1          0          0          0          0          0 |         8 
+         4 |         0          0          0          1          3          0          0          0          0          0 |         4 
+         5 |         0          0          0          0          1          3          0          0          0          0 |         4 
+         6 |         0          0          0          0          0          0          2          0          0          0 |         2 
+         7 |         0          0          0          0          0          0          1          1          0          0 |         2 
+         8 |         0          0          0          0          0          0          0          0          2          0 |         2 
+        10 |         0          0          0          0          0          0          0          0          1          0 |         1 
+-----------+--------------------------------------------------------------------------------------------------------------+----------
+     Total |         1         31         12          9          5          3          3          2          3          0 |        69 
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  84.06%      25.86%     0.7850     0.0592      13.25      0.0000
+Click to Open File:  IRR results.doc
+
+. asdoc kap pe_count_sx sf_count_sx, tab wgt(w2)
+(File IRR results.doc already exists, option append was assumed)
+
+pe_count_s |                                                  sf_count_sx
+         x |         0          1          2          3          4          5          6          7          8         10 |     Total
+-----------+--------------------------------------------------------------------------------------------------------------+----------
+         0 |         0          1          0          0          0          0          0          0          0          0 |         1 
+         1 |         1         29          0          0          0          0          0          0          0          0 |        30 
+         2 |         0          0         12          2          0          0          0          1          0          0 |        15 
+         3 |         0          1          0          6          1          0          0          0          0          0 |         8 
+         4 |         0          0          0          1          3          0          0          0          0          0 |         4 
+         5 |         0          0          0          0          1          3          0          0          0          0 |         4 
+         6 |         0          0          0          0          0          0          2          0          0          0 |         2 
+         7 |         0          0          0          0          0          0          1          1          0          0 |         2 
+         8 |         0          0          0          0          0          0          0          0          2          0 |         2 
+        10 |         0          0          0          0          0          0          0          0          1          0 |         1 
+-----------+--------------------------------------------------------------------------------------------------------------+----------
+     Total |         1         31         12          9          5          3          3          2          3          0 |        69 
+Ratings weighted by:
+   1.0000   0.9877   0.9506   0.8889   0.8025   0.6914   0.5556   0.3951   0.2099   0.0000
+   0.9877   1.0000   0.9877   0.9506   0.8889   0.8025   0.6914   0.5556   0.3951   0.2099
+   0.9506   0.9877   1.0000   0.9877   0.9506   0.8889   0.8025   0.6914   0.5556   0.3951
+   0.8889   0.9506   0.9877   1.0000   0.9877   0.9506   0.8889   0.8025   0.6914   0.5556
+   0.8025   0.8889   0.9506   0.9877   1.0000   0.9877   0.9506   0.8889   0.8025   0.6914
+   0.6914   0.8025   0.8889   0.9506   0.9877   1.0000   0.9877   0.9506   0.8889   0.8025
+   0.5556   0.6914   0.8025   0.8889   0.9506   0.9877   1.0000   0.9877   0.9506   0.8889
+   0.3951   0.5556   0.6914   0.8025   0.8889   0.9506   0.9877   1.0000   0.9877   0.9506
+   0.2099   0.3951   0.5556   0.6914   0.8025   0.8889   0.9506   0.9877   1.0000   0.9877
+   0.0000   0.2099   0.3951   0.5556   0.6914   0.8025   0.8889   0.9506   0.9877   1.0000
+
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  99.32%      89.97%     0.9322     0.1204       7.74      0.0000
+Click to Open File:  IRR results.doc
+
+. 
+. asdoc kap _pe_sna_specific _sf_sna_specific, tab
+(File IRR results.doc already exists, option append was assumed)
+
+pe_sna_specif |         sf_sna_specific
+           ic |  Both G&S  Generic o  Specific  |     Total
+--------------+---------------------------------+----------
+     Both G&S |        18          4          5 |        27 
+ Generic only |         0         37          4 |        41 
+Specific only |         0          1          0 |         1 
+--------------+---------------------------------+----------
+        Total |        18         42          9 |        69 
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  79.71%      46.57%     0.6203     0.0957       6.48      0.0000
+Click to Open File:  IRR results.doc
+
+. kapwgt specific 1 \ 0.5 1 \ 0.5 0 1
+
+. asdoc kap _pe_sna_specific _sf_sna_specific, tab wgt(specific)
+(File IRR results.doc already exists, option append was assumed)
+
+pe_sna_specif |         sf_sna_specific
+           ic |  Both G&S  Generic o  Specific  |     Total
+--------------+---------------------------------+----------
+     Both G&S |        18          4          5 |        27 
+ Generic only |         0         37          4 |        41 
+Specific only |         0          1          0 |         1 
+--------------+---------------------------------+----------
+        Total |        18         42          9 |        69 
+Ratings weighted by:
+   1.0000   0.5000   0.5000
+   0.5000   1.0000   0.0000
+   0.5000   0.0000   1.0000
+
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  86.23%      68.97%     0.5563     0.0954       5.83      0.0000
+Click to Open File:  IRR results.doc
+
+. 
+. 
+. asdoc kap _pe_sna_action _sf_sna_action, tab
+(File IRR results.doc already exists, option append was assumed)
+
+pe_sna_actio |                                                            sf_sna_action
+           n |        GP      GP_NS     GP_OOH  GP_OOH_99  GP_OOH_NS  GP_OOH_OT       _999        _NS       _OOH   _OOH_999    _OOH_NS        888 |     Total
+-------------+------------------------------------------------------------------------------------------------------------------------------------+----------
+          GP |        10          0          0          0          0          0          0          0          0          0          0          0 |        10 
+       GP_NS |         0          1          0          0          0          0          0          0          0          0          0          0 |         1 
+      GP_OOH |         0          0         13          0          0          0          0          0          0          0          0          0 |        13 
+  GP_OOH_999 |         0          0          0          2          0          0          0          0          0          0          0          0 |         2 
+   GP_OOH_NS |         0          0          0          0          0          1          0          0          0          0          0          0 |         1 
+GP_OOH_OTHER |         0          0          0          0          0          0          0          0          0          0          0          0 |         0 
+        _999 |         0          0          0          0          0          0          1          0          0          0          0          0 |         1 
+         _NS |         0          0          0          0          0          0          0          5          1          0          0          0 |         6 
+        _OOH |         0          0          0          0          0          0          0          2         22          0          1          1 |        26 
+    _OOH_999 |         0          0          0          0          0          0          0          0          0          1          0          1 |         2 
+     _OOH_NS |         0          0          0          0          0          0          0          1          0          0          1          0 |         2 
+         888 |         0          0          0          0          0          0          0          0          0          0          0          5 |         5 
+-------------+------------------------------------------------------------------------------------------------------------------------------------+----------
+       Total |        10          1         13          2          0          1          1          8         23          1          2          7 |        69 
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  88.41%      20.21%     0.8547     0.0546      15.67      0.0000
+Click to Open File:  IRR results.doc
+
+. 
+. kapwgt twelve ///
+> 1       ///
+> \ 0.5   1       ///
+> \ 0.5   0.5     1       ///
+> \ 0.33  0.33    0.66    1       ///
+> \ 0.33  0.33    0.66    0.66    1       ///
+> \ 0.33  0.33    0.66    0.66    0.66    1       ///
+> \ 0     0       0       0.33    0       0       1       ///
+> \ 0     0.5     0       0       0.33    0       0       1       ///
+> \ 0     0       0.5     0.33    0.33    0.33    0       0       1       ///
+> \ 0     0       0.5     0.66    0.33    0.33    0.5     0       0.5     1       ///
+> \ 0     0.5     0.5     0.33    0.66    0.33    0       0.5     0.5     0.5     1       ///
+> \ 0     0       0       0       0       0       0       0       0       0       0       1
+
+. 
+. asdoc kap _pe_sna_action _sf_sna_action, tab wgt(twelve)
+(File IRR results.doc already exists, option append was assumed)
+
+pe_sna_actio |                                                            sf_sna_action
+           n |        GP      GP_NS     GP_OOH  GP_OOH_99  GP_OOH_NS  GP_OOH_OT       _999        _NS       _OOH   _OOH_999    _OOH_NS        888 |     Total
+-------------+------------------------------------------------------------------------------------------------------------------------------------+----------
+          GP |        10          0          0          0          0          0          0          0          0          0          0          0 |        10 
+       GP_NS |         0          1          0          0          0          0          0          0          0          0          0          0 |         1 
+      GP_OOH |         0          0         13          0          0          0          0          0          0          0          0          0 |        13 
+  GP_OOH_999 |         0          0          0          2          0          0          0          0          0          0          0          0 |         2 
+   GP_OOH_NS |         0          0          0          0          0          1          0          0          0          0          0          0 |         1 
+GP_OOH_OTHER |         0          0          0          0          0          0          0          0          0          0          0          0 |         0 
+        _999 |         0          0          0          0          0          0          1          0          0          0          0          0 |         1 
+         _NS |         0          0          0          0          0          0          0          5          1          0          0          0 |         6 
+        _OOH |         0          0          0          0          0          0          0          2         22          0          1          1 |        26 
+    _OOH_999 |         0          0          0          0          0          0          0          0          0          1          0          1 |         2 
+     _OOH_NS |         0          0          0          0          0          0          0          1          0          0          1          0 |         2 
+         888 |         0          0          0          0          0          0          0          0          0          0          0          5 |         5 
+-------------+------------------------------------------------------------------------------------------------------------------------------------+----------
+       Total |        10          1         13          2          0          1          1          8         23          1          2          7 |        69 
+Ratings weighted by:
+   1.0000   0.5000   0.5000   0.3300   0.3300   0.3300   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000
+   0.5000   1.0000   0.5000   0.3300   0.3300   0.3300   0.0000   0.5000   0.0000   0.0000   0.5000   0.0000
+   0.5000   0.5000   1.0000   0.6600   0.6600   0.6600   0.0000   0.0000   0.5000   0.5000   0.5000   0.0000
+   0.3300   0.3300   0.6600   1.0000   0.6600   0.6600   0.3300   0.0000   0.3300   0.6600   0.3300   0.0000
+   0.3300   0.3300   0.6600   0.6600   1.0000   0.6600   0.0000   0.3300   0.3300   0.3300   0.6600   0.0000
+   0.3300   0.3300   0.6600   0.6600   0.6600   1.0000   0.0000   0.0000   0.3300   0.3300   0.3300   0.0000
+   0.0000   0.0000   0.0000   0.3300   0.0000   0.0000   1.0000   0.0000   0.0000   0.5000   0.0000   0.0000
+   0.0000   0.5000   0.0000   0.0000   0.3300   0.0000   0.0000   1.0000   0.0000   0.0000   0.5000   0.0000
+   0.0000   0.0000   0.5000   0.3300   0.3300   0.3300   0.0000   0.0000   1.0000   0.5000   0.5000   0.0000
+   0.0000   0.0000   0.5000   0.6600   0.3300   0.3300   0.5000   0.0000   0.5000   1.0000   0.5000   0.0000
+   0.0000   0.5000   0.5000   0.3300   0.6600   0.3300   0.0000   0.5000   0.5000   0.5000   1.0000   0.0000
+   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   0.0000   1.0000
+
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  90.81%      36.34%     0.8557     0.0597      14.34      0.0000
+Click to Open File:  IRR results.doc
+
+. 
+. asdoc kap pe_sna_time sf_sna_time, tab
+(File IRR results.doc already exists, option append was assumed)
+
+               |           sf_sna_time
+   pe_sna_time | None spec  fixed tim     urgent |     Total
+---------------+---------------------------------+----------
+None specified |        62          0          0 |        62 
+    fixed time |         2          4          0 |         6 
+        urgent |         1          0          0 |         1 
+---------------+---------------------------------+----------
+         Total |        65          4          0 |        69 
+             Expected
+Agreement   agreement     Kappa   Std. err.         Z      Prob>Z
+-----------------------------------------------------------------
+  95.65%      85.15%     0.7072     0.1083       6.53      0.0000
+Click to Open File:  IRR results.doc
+
+. 
+. asdoc tab pe_sna_written sf_sna_written
+(File IRR results.doc already exists, option append was assumed)
+
+           | sf_sna_wri
+pe_sna_wri |    tten
+      tten |         0 |     Total
+-----------+-----------+----------
+         0 |        69 |        69 
+-----------+-----------+----------
+     Total |        69 |        69 
+Click to Open File:  IRR results.doc
+
+. asdoc tab pe_pil sf_pil
+(File IRR results.doc already exists, option append was assumed)
+
+           |   sf_pil
+    pe_pil |         0 |     Total
+-----------+-----------+----------
+         0 |        69 |        69 
+-----------+-----------+----------
+     Total |        69 |        69 
+Click to Open File:  IRR results.doc
+
+. 
+end of do-file
+
+  ___  ____  ____  ____  ____ ©
+ /__    /   ____/   /   ____/      17.0
+___/   /   /___/   /   /___/       MP—Parallel Edition
+
+ Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                   StataCorp
+                                   4905 Lakeway Drive
+                                   College Station, Texas 77845 USA
+                                   800-STATA-PC        https://www.stata.com
+                                   979-696-4600        stata@stata.com
+
+#redacted
+
+Running \Stata17\profile.do ...
+
+. doedit "REDACTED\sna_problems.do" 
+
+. do "REDACTED\STD2684_000000.tmp"
+
+. cd "REDACTED\Stata\Final analysis\Reports"
+REDACTED\Stata\Final analysis\Reports
+
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_problems.dta", clear
+
+. drop if exclude ==1
+(0 observations deleted)
+
+. 
+. **
+. asdoc, text(Problems Report) fs(15) save(report_by_problems) replace
+(file report_by_problems.doc not found)
+Click to Open File:  report_by_problems.doc
+
+. asdoc tab any_sna
+(File report_by_problems.doc already exists, option append was assumed)
+
+SNA Present |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        467       22.73       22.73
+          1 |      1,588       77.27      100.00
+------------+-----------------------------------
+      Total |      2,055      100.00
+Click to Open File:  report_by_problems.doc
+
+. asdoc tab problem any_sna
+(File report_by_problems.doc already exists, option append was assumed)
+
+                      |      SNA Present
+                   p1 |         0          1 |     Total
+----------------------+----------------------+----------
+(A) General - abnorma |         6          6 |        12 
+(A) General - contrac |         0          1 |         1 
+   (A) General - fall |         6          9 |        15 
+(A) General - infecti |         3         16 |        19 
+(A) General - medicat |        15         32 |        47 
+(A) General - palliat |        21         32 |        53 
+(A) General - unspeci |        22         44 |        66 
+            (B) Blood |         2          2 |         4 
+ (D) Digestive system |        57        243 |       300 
+              (F) Eye |         8         22 |        30 
+   (G) Genital system |        12         34 |        46 
+              (H) Ear |        12         66 |        78 
+(K) Circulatory syste |        28         44 |        72 
+(L) Musculatory syste |        52        174 |       226 
+(N) Neurological syst |        12         44 |        56 
+(P) Psychological sys |        37         40 |        77 
+(R) Respiratory syste |        56        332 |       388 
+             (S) Skin |        51        184 |       235 
+ (T) Endocrine System |         8          6 |        14 
+   (U) Urinary system |        52        235 |       287 
+(W) Pregnancy and chi |         5         21 |        26 
+  (Z) Social Problems |         2          1 |         3 
+----------------------+----------------------+----------
+                Total |       467      1,588 |     2,055 
+Click to Open File:  report_by_problems.doc
+
+. asdoc tab problem any_fu
+(File report_by_problems.doc already exists, option append was assumed)
+
+                      |   Follow up present
+                   p1 | No follow  Follow-up |     Total
+----------------------+----------------------+----------
+(A) General - abnorma |         0         12 |        12 
+(A) General - contrac |         1          0 |         1 
+   (A) General - fall |         9          6 |        15 
+(A) General - infecti |        15          4 |        19 
+(A) General - medicat |        28         19 |        47 
+(A) General - palliat |        33         20 |        53 
+(A) General - unspeci |        28         38 |        66 
+            (B) Blood |         1          3 |         4 
+ (D) Digestive system |       175        125 |       300 
+              (F) Eye |        20         10 |        30 
+   (G) Genital system |        22         24 |        46 
+              (H) Ear |        48         30 |        78 
+(K) Circulatory syste |        14         58 |        72 
+(L) Musculatory syste |       139         87 |       226 
+(N) Neurological syst |        27         29 |        56 
+(P) Psychological sys |        20         57 |        77 
+(R) Respiratory syste |       265        123 |       388 
+             (S) Skin |       139         96 |       235 
+ (T) Endocrine System |         3         11 |        14 
+   (U) Urinary system |       153        134 |       287 
+(W) Pregnancy and chi |        12         14 |        26 
+  (Z) Social Problems |         1          2 |         3 
+----------------------+----------------------+----------
+                Total |     1,153        902 |     2,055 
+Click to Open File:  report_by_problems.doc
+
+. asdoc tab problem any_sna_or_fu
+(File report_by_problems.doc already exists, option append was assumed)
+
+                      |     any_sna_or_fu
+                   p1 |         0          1 |     Total
+----------------------+----------------------+----------
+(A) General - abnorma |         0         12 |        12 
+(A) General - contrac |         0          1 |         1 
+   (A) General - fall |         4         11 |        15 
+(A) General - infecti |         2         17 |        19 
+(A) General - medicat |         7         40 |        47 
+(A) General - palliat |        11         42 |        53 
+(A) General - unspeci |         6         60 |        66 
+            (B) Blood |         0          4 |         4 
+ (D) Digestive system |        21        279 |       300 
+              (F) Eye |         4         26 |        30 
+   (G) Genital system |         1         45 |        46 
+              (H) Ear |         4         74 |        78 
+(K) Circulatory syste |         3         69 |        72 
+(L) Musculatory syste |        26        200 |       226 
+(N) Neurological syst |         6         50 |        56 
+(P) Psychological sys |         9         68 |        77 
+(R) Respiratory syste |        39        349 |       388 
+             (S) Skin |        22        213 |       235 
+ (T) Endocrine System |         2         12 |        14 
+   (U) Urinary system |        21        266 |       287 
+(W) Pregnancy and chi |         2         24 |        26 
+  (Z) Social Problems |         1          2 |         3 
+----------------------+----------------------+----------
+                Total |       191      1,864 |     2,055 
+Click to Open File:  report_by_problems.doc
+
+. asdoc tab problem infection
+(File report_by_problems.doc already exists, option append was assumed)
+
+                      |       Infection
+                   p1 | Not possi  Possible  |     Total
+----------------------+----------------------+----------
+(A) General - abnorma |        12          0 |        12 
+(A) General - contrac |         1          0 |         1 
+   (A) General - fall |        14          1 |        15 
+(A) General - infecti |         0         19 |        19 
+(A) General - medicat |        45          2 |        47 
+(A) General - palliat |        51          2 |        53 
+(A) General - unspeci |        57          9 |        66 
+            (B) Blood |         3          1 |         4 
+ (D) Digestive system |       228         72 |       300 
+              (F) Eye |        11         19 |        30 
+   (G) Genital system |        29         17 |        46 
+              (H) Ear |        34         44 |        78 
+(K) Circulatory syste |        68          4 |        72 
+(L) Musculatory syste |       221          5 |       226 
+(N) Neurological syst |        52          4 |        56 
+(P) Psychological sys |        76          1 |        77 
+(R) Respiratory syste |        79        309 |       388 
+             (S) Skin |        72        163 |       235 
+ (T) Endocrine System |        14          0 |        14 
+   (U) Urinary system |        54        233 |       287 
+(W) Pregnancy and chi |        20          6 |        26 
+  (Z) Social Problems |         3          0 |         3 
+----------------------+----------------------+----------
+                Total |     1,144        911 |     2,055 
+Click to Open File:  report_by_problems.doc
+
+. 
+. duplicates drop sandooh_id, force
+
+Duplicates in terms of sandooh_id
+
+(169 observations deleted)
+
+. asdoc tab no_of_probs
+(File report_by_problems.doc already exists, option append was assumed)
+
+no_of_probs |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |      1,732       91.83       91.83
+          2 |        141        7.48       99.31
+          3 |         11        0.58       99.89
+          4 |          2        0.11      100.00
+------------+-----------------------------------
+      Total |      1,886      100.00
+Click to Open File:  report_by_problems.doc
+
+. 
+. 
+end of do-file
+
+. 
+  ___  ____  ____  ____  ____ ©
+ /__    /   ____/   /   ____/      17.0
+___/   /   /___/   /   /___/       MP—Parallel Edition
+
+ Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                   StataCorp
+                                   4905 Lakeway Drive
+                                   College Station, Texas 77845 USA
+                                   800-STATA-PC        https://www.stata.com
+                                   979-696-4600        stata@stata.com
+
+#redacted
+
+Running \Stata17\profile.do ...
+
+. doedit "REDACTED\prescription_models_final.do" 
+
+. do "REDACTED\prescription_models_final.do"
+
+. cd "REDACTED\Stata\Final analysis\Reports"
+REDACTED\Stata\Final analysis\Reports
+
+. use "REDACTED\Stata\Final analysis\Dta\sandooh_final.dta", clear
+
+. drop if exclude ==1
+(514 observations deleted)
+
+. drop exclusion_reason
+
+. drop if pos_not_seen ==1
+(0 observations deleted)
+
+. tab pos_not_seen
+
+pos_not_see |
+          n |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,886      100.00      100.00
+------------+-----------------------------------
+      Total |      1,886      100.00
+
+. 
+. asdoc, text(SANDOOH Models) fs(15) save(prescription) replace
+(file prescription.doc not found)
+Click to Open File:  prescription.doc
+
+. 
+. *Year
+. asdoc tab dateyear prescription_bin
+(File prescription.doc already exists, option append was assumed)
+
+           |   prescription_bin
+  dateyear | No prescr  Prescript |     Total
+-----------+----------------------+----------
+      2013 |        78         67 |       145 
+      2014 |       169        127 |       296 
+      2015 |       166        133 |       299 
+      2016 |       150        148 |       298 
+      2017 |       150        136 |       286 
+      2018 |       128        119 |       247 
+      2019 |       144        126 |       270 
+      2020 |        25         20 |        45 
+-----------+----------------------+----------
+     Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin dateyear 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1886        1.02        (0.98 to 1.07)     0.369
+-----------------------------------------------------------------------------------------
+Click to Open File:  prescription.doc
+
+. 
+. *season
+. asdoc tab season prescription_bin, row
+(File prescription.doc already exists, option append was assumed)
+
++----------------+
+| Key            |
+|----------------|
+|   frequency    |
+| row percentage |
++----------------+
+
+           |   prescription_bin
+    season | No prescr  Prescript |     Total
+-----------+----------------------+----------
+    Winter |       280        228 |       508 
+           |     55.12      44.88 |    100.00 
+-----------+----------------------+----------
+    Spring |       229        203 |       432 
+           |     53.01      46.99 |    100.00 
+-----------+----------------------+----------
+    Summer |       235        227 |       462 
+           |     50.87      49.13 |    100.00 
+-----------+----------------------+----------
+    Autumn |       266        218 |       484 
+           |     54.96      45.04 |    100.00 
+-----------+----------------------+----------
+     Total |     1,010        876 |     1,886 
+           |     53.55      46.45 |    100.00 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.season 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Season                                                                           
+  Winter*                                 508           1                                
+  Spring                                  432        1.09        (0.84 to 1.41)     0.518
+  Summer                                  462        1.19        (0.92 to 1.53)     0.185
+  Autumn                                  484        1.01        (0.78 to 1.29)     0.960
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *Contact Type
+. asdoc tab contacttype prescription_bin
+(File prescription.doc already exists, option append was assumed)
+
+                 |   prescription_bin
+    contact_type | No prescr  Prescript |     Total
+-----------------+----------------------+----------
+       Telephone |       444         36 |       480 
+Treatment Centre |       174        531 |       705 
+      Home Visit |       392        309 |       701 
+-----------------+----------------------+----------
+           Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.contacttype 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Contact_type                                                                     
+  Telephone*                              480           1                                
+  Treatment Centre                        705       37.64      (25.73 to 55.06)    <0.001
+  Home Visit                              701        9.72       (6.71 to 14.09)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *pt age 65
+. asdoc tab pt_65 prescription_bin, missing
+(File prescription.doc already exists, option append was assumed)
+
+            |   prescription_bin
+Patient Age | No prescr  Prescript |     Total
+------------+----------------------+----------
+16-64 Years |       494        546 |     1,040 
+  65+ Years |       516        330 |       846 
+------------+----------------------+----------
+      Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.pt_65 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Patient Age                                                                      
+  16-64 Years*                           1040           1                                
+  65+ Years                               846        0.58        (0.48 to 0.70)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *pt age 75
+. asdoc tab pt_75 prescription_bin
+(File prescription.doc already exists, option append was assumed)
+
+            |   prescription_bin
+Patient Age | No prescr  Prescript |     Total
+------------+----------------------+----------
+16-74 Years |       619        612 |     1,231 
+  75+ Years |       391        264 |       655 
+------------+----------------------+----------
+      Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.pt_75 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Patient Age                                                                      
+  16-74 Years*                           1231           1                                
+  75+ Years                               655        0.68        (0.56 to 0.83)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *pt sex
+. asdoc tab sex prescription_bin, missing 
+(File prescription.doc already exists, option append was assumed)
+
+           |   prescription_bin
+       sex | No prescr  Prescript |     Total
+-----------+----------------------+----------
+    Female |       635        555 |     1,190 
+      Male |       374        321 |       695 
+         . |         1          0 |         1 
+-----------+----------------------+----------
+     Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.sex 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1885
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Sex                                                                              
+  Female*                                1190           1                                
+  Male                                    695        0.98        (0.81 to 1.18)     0.850
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *deprivation cat
+. asdoc tab pt_townsend prescription_bin, missing 
+(File prescription.doc already exists, option append was assumed)
+
+           |   prescription_bin
+  townsend | No prescr  Prescript |     Total
+-----------+----------------------+----------
+         1 |       119        101 |       220 
+         2 |       138        121 |       259 
+         3 |       154        136 |       290 
+         4 |       205        154 |       359 
+         5 |       373        333 |       706 
+         . |        21         31 |        52 
+-----------+----------------------+----------
+     Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.pt_townsend 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1834
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Townsend                                                                         
+  1*                                      220           1                                
+  2                                       259        1.03        (0.72 to 1.48)     0.860
+  3                                       290        1.04        (0.73 to 1.48)     0.825
+  4                                       359        0.89        (0.63 to 1.24)     0.479
+  5                                       706        1.05        (0.78 to 1.42)     0.744
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. test _Ipt_townse_2 _Ipt_townse_3 _Ipt_townse_4 _Ipt_townse_5
+
+ ( 1)  [prescription_bin]_Ipt_townse_2 = 0
+ ( 2)  [prescription_bin]_Ipt_townse_3 = 0
+ ( 3)  [prescription_bin]_Ipt_townse_4 = 0
+ ( 4)  [prescription_bin]_Ipt_townse_5 = 0
+
+           chi2(  4) =    1.92
+         Prob > chi2 =    0.7504
+
+. 
+. *deprivation lin
+. quietly xi: melogit prescription_bin pt_townsend 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1834
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Townsend                                                                         
+  per unit                               1834        1.00        (0.94 to 1.07)     0.919
+-----------------------------------------------------------------------------------------
+Click to Open File:  prescription.doc
+
+. 
+. *follow up
+. asdoc tab any_fu prescription_bin
+(File prescription.doc already exists, option append was assumed)
+
+                  |   prescription_bin
+Follow up present | No prescr  Prescript |     Total
+------------------+----------------------+----------
+     No follow-up |       526        529 |     1,055 
+Follow-up present |       484        347 |       831 
+------------------+----------------------+----------
+            Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.any_fu 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Follow up present                                                                
+  No follow-up*                          1055           1                                
+  Follow-up present                       831        0.71        (0.59 to 0.86)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *Infection
+. asdoc tab infection prescription_bin
+(File prescription.doc already exists, option append was assumed)
+
+                      |   prescription_bin
+            Infection | No prescr  Prescript |     Total
+----------------------+----------------------+----------
+Not possible infectio |       706        305 |     1,011 
+   Possible Infection |       304        571 |       875 
+----------------------+----------------------+----------
+                Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.infection 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Infection                                                                        
+  Not possible infection*                1011           1                                
+  Possible Infection                      875        4.35        (3.58 to 5.28)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *mental health
+. asdoc tab mental_health prescription_bin
+(File prescription.doc already exists, option append was assumed)
+
+                      |   prescription_bin
+        mental_health | No prescr  Prescript |     Total
+----------------------+----------------------+----------
+Physical health probl |       944        864 |     1,808 
+   Mental health only |        58          7 |        65 
+Mental & physical hea |         7          5 |        12 
+Only contains social  |         1          0 |         1 
+----------------------+----------------------+----------
+                Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.mental_health 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1885
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Mental_health                                                                    
+  Physical health problems*              1808           1                                
+  Mental health only                       65        0.13        (0.06 to 0.29)    <0.001
+  Mental & physical health                 12        0.78        (0.25 to 2.47)     0.673
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *sna
+. asdoc tab any_sna prescription_bin 
+(File prescription.doc already exists, option append was assumed)
+
+       SNA |   prescription_bin
+   Present | No prescr  Prescript |     Total
+-----------+----------------------+----------
+         0 |       274        140 |       414 
+         1 |       736        736 |     1,472 
+-----------+----------------------+----------
+     Total |     1,010        876 |     1,886 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.any_sna 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+SNA Present                                                                      
+  0*                                      414           1                                
+  1                                      1472        1.96        (1.56 to 2.46)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *nurse not inc
+. asdoc  tab nurse prescription_bin, 
+(File prescription.doc already exists, option append was assumed)
+
+           |   prescription_bin
+     nurse | No prescr  Prescript |     Total
+-----------+----------------------+----------
+ TC Doctor |       109        320 |       429 
+  TC Nurse |        58        190 |       248 
+-----------+----------------------+----------
+     Total |       167        510 |       677 
+Click to Open File:  prescription.doc
+
+. quietly xi: melogit prescription_bin i.nurse 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=677
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Nurse                                                                            
+  TC Doctor*                              429           1                                
+  TC Nurse                                248        1.12        (0.77 to 1.61)     0.557
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. drop if mental_health==3
+(1 observation deleted)
+
+. 
+. *Multivariable
+. quietly xi: melogit prescription_bin dateyear i.season i.contacttype i.any_fu i.any_sna i.infection i.mental_health  i.pt_65 i.sex i.pt_townsend   || clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1827
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1827        1.01        (0.94 to 1.09)     0.795
+Season                                                                           
+  Winter*                                 492           1                                
+  Spring                                  421        1.17        (0.81 to 1.71)     0.404
+  Summer                                  441        1.21        (0.83 to 1.75)     0.328
+  Autumn                                  473        1.08        (0.75 to 1.56)     0.687
+Contact_type                                                                     
+  Telephone*                              464           1                                
+  Treatment Centre                        685       66.33     (37.98 to 115.85)    <0.001
+  Home Visit                              678        9.04       (5.44 to 15.02)    <0.001
+Follow up present                                                                
+  No follow-up*                          1019           1                                
+  Follow-up present                       808        0.85        (0.64 to 1.13)     0.257
+SNA Present                                                                      
+  0*                                      407           1                                
+  1                                      1420        0.99        (0.69 to 1.42)     0.960
+Infection                                                                        
+  Not possible infection*                 980           1                                
+  Possible Infection                      847        3.79        (2.88 to 4.99)    <0.001
+Mental_health                                                                    
+  Physical health problems*              1753           1                                
+  Mental health only                       62        0.25        (0.09 to 0.72)     0.010
+  Mental & physical health                 12        0.87        (0.18 to 4.19)     0.862
+Patient Age                                                                      
+  16-64 Years*                           1012           1                                
+  65+ Years                               815        1.35        (0.93 to 1.98)     0.116
+Sex                                                                              
+  Female*                                1150           1                                
+  Male                                    677        1.09        (0.83 to 1.44)     0.515
+Townsend                                                                         
+  1*                                      219           1                                
+  2                                       259        0.86        (0.51 to 1.43)     0.556
+  3                                       290        1.06        (0.65 to 1.74)     0.803
+  4                                       357        0.66        (0.41 to 1.08)     0.099
+  5                                       702        0.76        (0.48 to 1.18)     0.216
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+. *Multivariable age 75
+. quietly xi: melogit prescription_bin dateyear i.season i.contacttype i.any_fu i.any_sna i.infection i.mental_health  i.pt_75 i.sex i.pt_townsend   || clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: prescription_bin , n=1827
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1827        1.01        (0.94 to 1.09)     0.817
+Season                                                                           
+  Winter*                                 492           1                                
+  Spring                                  421        1.18        (0.81 to 1.72)     0.391
+  Summer                                  441        1.22        (0.84 to 1.77)     0.306
+  Autumn                                  473        1.08        (0.75 to 1.57)     0.682
+Contact_type                                                                     
+  Telephone*                              464           1                                
+  Treatment Centre                        685       67.30     (38.83 to 116.63)    <0.001
+  Home Visit                              678        8.67       (5.24 to 14.35)    <0.001
+Follow up present                                                                
+  No follow-up*                          1019           1                                
+  Follow-up present                       808        0.84        (0.63 to 1.12)     0.239
+SNA Present                                                                      
+  0*                                      407           1                                
+  1                                      1420        1.01        (0.70 to 1.45)     0.969
+Infection                                                                        
+  Not possible infection*                 980           1                                
+  Possible Infection                      847        3.80        (2.88 to 5.00)    <0.001
+Mental_health                                                                    
+  Physical health problems*              1753           1                                
+  Mental health only                       62        0.26        (0.09 to 0.74)     0.012
+  Mental & physical health                 12        0.89        (0.19 to 4.21)     0.879
+Patient Age                                                                      
+  16-74 Years*                           1198           1                                
+  75+ Years                               629        1.55        (1.09 to 2.21)     0.015
+Sex                                                                              
+  Female*                                1150           1                                
+  Male                                    677        1.13        (0.86 to 1.49)     0.373
+Townsend                                                                         
+  1*                                      219           1                                
+  2                                       259        0.85        (0.51 to 1.42)     0.537
+  3                                       290        1.06        (0.65 to 1.73)     0.811
+  4                                       357        0.66        (0.41 to 1.08)     0.096
+  5                                       702        0.76        (0.49 to 1.19)     0.229
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  prescription.doc
+
+. 
+end of do-file
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  REDACTED\SaND-OOH\sancot_results.log
+  log type:  text
+ opened on:  30 Oct 2023, 18:21:49
+
+. cd "REDACTED\SaND-OOH\Stata\Final analysis\Reports"
+REDACTED\SaND-OOH\Stata\Final analysis\Reports
+
+. import excel "REDACTED\SaND-OOH\Stata\Final analysis\Excel exports\sancot_review_with 653_included.xlsx", sheet("valuesonly") firstrow clear
+(39 vars, 1,472 obs)
+
+. 
+. list sandooh_id if no_of_actions ==0 & sna_format!= "Symptom / conditional  ONLY(red flags highlighted)"
+
+. list sandooh_id if no_of_actions !=0 & sna_format== "Symptom / conditional  ONLY(red flags highlighted)"
+
+. 
+. ********** PER CONSULTATION ************
+. 
+. asdoc, text(SANDOOH table 3 sancot results PER CONSULTATION) fs(15) save(sancot_results) replace
+(file sancot_results.doc not found)
+Click to Open File:  sancot_results.doc
+
+. 
+. asdoc tab sna_prob_tx
+(File sancot_results.doc already exists, option append was assumed)
+
+          sna_prob_tx |      Freq.     Percent        Cum.
+----------------------+-----------------------------------
+ Both (often generic) |        716       48.64       48.64
+         Problem only |        752       51.09       99.73
+Treatment / plan only |          4        0.27      100.00
+----------------------+-----------------------------------
+                Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sna_format
+(File sancot_results.doc already exists, option append was assumed)
+
+                             sna_format |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+Symptom / conditional  ONLY(red flags h |         57        3.87        3.87
+Symptom / conditional + action (if x do |      1,415       96.13      100.00
+----------------------------------------+-----------------------------------
+                                  Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. 
+. asdoc tab sna_specific
+(File sancot_results.doc already exists, option append was assumed)
+
+ sna_specific |      Freq.     Percent        Cum.
+--------------+-----------------------------------
+     Both G&S |        506       34.38       34.38
+ Generic only |        776       52.72       87.09
+Specific only |        190       12.91      100.00
+--------------+-----------------------------------
+        Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sna_action_notspecified
+(File sancot_results.doc already exists, option append was assumed)
+
+sna_action_ |
+notspecifie |
+          d |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,144       77.72       77.72
+          1 |        328       22.28      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sna_action_owngp
+(File sancot_results.doc already exists, option append was assumed)
+
+sna_action_ |
+      owngp |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        943       64.06       64.06
+          1 |        529       35.94      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sna_action_ooh
+(File sancot_results.doc already exists, option append was assumed)
+
+sna_action_ |
+        ooh |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        517       35.12       35.12
+          1 |        955       64.88      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sna_action_999
+(File sancot_results.doc already exists, option append was assumed)
+
+sna_action_ |
+        999 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,294       87.91       87.91
+          1 |        178       12.09      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sna_action_other_bin
+(File sancot_results.doc already exists, option append was assumed)
+
+sna_action_ |
+  other_bin |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,449       98.44       98.44
+          1 |         23        1.56      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab no_of_actions
+(File sancot_results.doc already exists, option append was assumed)
+
+no_of_actio |
+         ns |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |         57        3.87        3.87
+          1 |        877       59.58       63.45
+          2 |        482       32.74       96.20
+          3 |         52        3.53       99.73
+          4 |          4        0.27      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sna_time_fixed
+(File sancot_results.doc already exists, option append was assumed)
+
+sna_time_fi |
+        xed |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,233       83.76       83.76
+          1 |        239       16.24      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sna_time_urgent       
+(File sancot_results.doc already exists, option append was assumed)
+
+sna_time_ur |
+       gent |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,390       94.43       94.43
+          1 |         82        5.57      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sna_time_fixed_or_urgent
+(File sancot_results.doc already exists, option append was assumed)
+
+sna_time_fi |
+xed_or_urge |
+         nt |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,171       79.55       79.55
+          1 |        281       19.09       98.64
+          2 |         20        1.36      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. 
+. asdoc tab sna_written 
+(File sancot_results.doc already exists, option append was assumed)
+
+sna_written |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,469       99.80       99.80
+          1 |          3        0.20      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab pil
+(File sancot_results.doc already exists, option append was assumed)
+
+        pil |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,472      100.00      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. 
+. asdoc tab sna_no_sx
+(File sancot_results.doc already exists, option append was assumed)
+
+  sna_no_sx |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |        534       36.28       36.28
+          2 |        397       26.97       63.25
+          3 |        177       12.02       75.27
+          4 |        136        9.24       84.51
+          5 |         92        6.25       90.76
+          6 |         49        3.33       94.09
+          7 |         39        2.65       96.74
+          8 |         17        1.15       97.89
+          9 |         13        0.88       98.78
+         10 |         12        0.82       99.59
+         11 |          4        0.27       99.86
+         12 |          2        0.14      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tabstat sna_no_sx, stat(N min max mean sd median) save(sancot_results) append
+
+             |         N        Min        Max       Mean         SD        p50 
+-------------+------------------------------------------------------------------
+   sna_no_sx |      1472          1         12   2.629755   1.985539          2 
+Click to Open File:  sancot_results.doc
+
+. 
+. 
+. clear
+
+. import excel "REDACTED\SaND-OOH\Stata\Final analysis\Excel exports\sancot_review_with 653_included.xlsx", sheet("stata_symptoms") firstrow clear
+(24 vars, 1,472 obs)
+
+. 
+. asdoc tab ssc
+(File sancot_results.doc already exists, option append was assumed)
+
+        ssc |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        986       66.98       66.98
+          1 |        152       10.33       77.31
+          2 |        143        9.71       87.02
+          3 |         91        6.18       93.21
+          4 |         50        3.40       96.60
+          5 |         27        1.83       98.44
+          6 |         13        0.88       99.32
+          7 |          4        0.27       99.59
+          8 |          4        0.27       99.86
+          9 |          2        0.14      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab other_new
+(File sancot_results.doc already exists, option append was assumed)
+
+  other_new |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,135       77.11       77.11
+          1 |        160       10.87       87.98
+          2 |        103        7.00       94.97
+          3 |         38        2.58       97.55
+          4 |         20        1.36       98.91
+          5 |          9        0.61       99.52
+          6 |          2        0.14       99.66
+          7 |          4        0.27       99.93
+          9 |          1        0.07      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab fever
+(File sancot_results.doc already exists, option append was assumed)
+
+      fever |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,322       89.81       89.81
+          1 |        135        9.17       98.98
+          2 |         10        0.68       99.66
+          3 |          5        0.34      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sob
+(File sancot_results.doc already exists, option append was assumed)
+
+        sob |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,339       90.96       90.96
+          1 |        111        7.54       98.51
+          2 |         20        1.36       99.86
+          3 |          2        0.14      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab pain
+(File sancot_results.doc already exists, option append was assumed)
+
+       pain |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,353       91.92       91.92
+          1 |        114        7.74       99.66
+          2 |          4        0.27       99.93
+          3 |          1        0.07      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab vomit
+(File sancot_results.doc already exists, option append was assumed)
+
+      vomit |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,386       94.16       94.16
+          1 |         86        5.84      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sepsis
+(File sancot_results.doc already exists, option append was assumed)
+
+     sepsis |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,462       99.32       99.32
+          1 |         10        0.68      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab worse
+(File sancot_results.doc already exists, option append was assumed)
+
+      worse |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        833       56.59       56.59
+          1 |        625       42.46       99.05
+          2 |         14        0.95      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab inb
+(File sancot_results.doc already exists, option append was assumed)
+
+        inb |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        850       57.74       57.74
+          1 |        597       40.56       98.30
+          2 |         25        1.70      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab concern
+(File sancot_results.doc already exists, option append was assumed)
+
+    concern |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,099       74.66       74.66
+          1 |        341       23.17       97.83
+          2 |         32        2.17      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab increase_sx
+(File sancot_results.doc already exists, option append was assumed)
+
+increase_sx |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,284       87.23       87.23
+          1 |        169       11.48       98.71
+          2 |         19        1.29      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab red_flag
+(File sancot_results.doc already exists, option append was assumed)
+
+   red_flag |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,339       90.96       90.96
+          1 |        129        8.76       99.73
+          2 |          4        0.27      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab necessary
+(File sancot_results.doc already exists, option append was assumed)
+
+  necessary |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,345       91.37       91.37
+          1 |        122        8.29       99.66
+          2 |          5        0.34      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sos
+(File sancot_results.doc already exists, option append was assumed)
+
+        sos |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,349       91.64       91.64
+          1 |        123        8.36      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab unwell
+(File sancot_results.doc already exists, option append was assumed)
+
+     unwell |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,380       93.75       93.75
+          1 |         92        6.25      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab newsymp
+(File sancot_results.doc already exists, option append was assumed)
+
+   new symp |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,392       94.57       94.57
+          1 |         80        5.43      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab safety_net
+(File sancot_results.doc already exists, option append was assumed)
+
+ safety_net |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,402       95.24       95.24
+          1 |         70        4.76      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab problem
+(File sancot_results.doc already exists, option append was assumed)
+
+    problem |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,415       96.13       96.13
+          1 |         57        3.87      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab change
+(File sancot_results.doc already exists, option append was assumed)
+
+     change |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,432       97.28       97.28
+          1 |         40        2.72      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab return_sx
+(File sancot_results.doc already exists, option append was assumed)
+
+  return_sx |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,446       98.23       98.23
+          1 |         26        1.77      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. 
+. 
+. asdoc tab sna_no_sx
+(File sancot_results.doc already exists, option append was assumed)
+
+  sna_no_sx |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |        534       36.28       36.28
+          2 |        397       26.97       63.25
+          3 |        177       12.02       75.27
+          4 |        136        9.24       84.51
+          5 |         92        6.25       90.76
+          6 |         49        3.33       94.09
+          7 |         39        2.65       96.74
+          8 |         17        1.15       97.89
+          9 |         13        0.88       98.78
+         10 |         12        0.82       99.59
+         11 |          4        0.27       99.86
+         12 |          2        0.14      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tabstat sna_no_sx, stat(N min max mean sd median) save(sancot_results) append
+
+             |         N        Min        Max       Mean         SD        p50 
+-------------+------------------------------------------------------------------
+   sna_no_sx |      1472          1         12   2.629755   1.985539          2 
+Click to Open File:  sancot_results.doc
+
+. 
+. replace ssc = 1 if ssc >0
+(334 real changes made)
+
+. replace other_new = 1 if other_new >0
+(177 real changes made)
+
+. replace fever = 1 if fever >0
+(15 real changes made)
+
+. replace sob = 1 if sob >0
+(22 real changes made)
+
+. replace pain = 1 if pain >0
+(5 real changes made)
+
+. replace vomit = 1 if vomit >0
+(0 real changes made)
+
+. replace sepsis = 1 if sepsis >0
+(0 real changes made)
+
+. replace worse = 1 if worse >0
+(14 real changes made)
+
+. replace inb = 1 if inb >0
+(25 real changes made)
+
+. replace concern = 1 if concern >0
+(32 real changes made)
+
+. replace increase_sx = 1 if increase_sx >0
+(19 real changes made)
+
+. replace red_flag = 1 if red_flag >0
+(4 real changes made)
+
+. replace necessary = 1 if necessary >0
+(5 real changes made)
+
+. replace unwell = 1 if unwell >0
+(0 real changes made)
+
+. replace newsymp = 1 if newsymp >0
+(0 real changes made)
+
+. replace safety_net = 1 if safety_net >0
+(0 real changes made)
+
+. replace problem = 1 if problem >0
+(0 real changes made)
+
+. replace change = 1 if change >0
+(0 real changes made)
+
+. replace return_sx = 1 if return_sx >0
+(0 real changes made)
+
+. 
+. 
+. asdoc tab ssc
+(File sancot_results.doc already exists, option append was assumed)
+
+        ssc |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        986       66.98       66.98
+          1 |        486       33.02      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab other_new
+(File sancot_results.doc already exists, option append was assumed)
+
+  other_new |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,135       77.11       77.11
+          1 |        337       22.89      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab fever
+(File sancot_results.doc already exists, option append was assumed)
+
+      fever |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,322       89.81       89.81
+          1 |        150       10.19      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sob
+(File sancot_results.doc already exists, option append was assumed)
+
+        sob |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,339       90.96       90.96
+          1 |        133        9.04      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab pain
+(File sancot_results.doc already exists, option append was assumed)
+
+       pain |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,353       91.92       91.92
+          1 |        119        8.08      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab vomit
+(File sancot_results.doc already exists, option append was assumed)
+
+      vomit |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,386       94.16       94.16
+          1 |         86        5.84      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sepsis
+(File sancot_results.doc already exists, option append was assumed)
+
+     sepsis |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,462       99.32       99.32
+          1 |         10        0.68      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab worse
+(File sancot_results.doc already exists, option append was assumed)
+
+      worse |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        833       56.59       56.59
+          1 |        639       43.41      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab inb
+(File sancot_results.doc already exists, option append was assumed)
+
+        inb |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        850       57.74       57.74
+          1 |        622       42.26      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab concern
+(File sancot_results.doc already exists, option append was assumed)
+
+    concern |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,099       74.66       74.66
+          1 |        373       25.34      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab increase_sx
+(File sancot_results.doc already exists, option append was assumed)
+
+increase_sx |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,284       87.23       87.23
+          1 |        188       12.77      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab red_flag
+(File sancot_results.doc already exists, option append was assumed)
+
+   red_flag |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,339       90.96       90.96
+          1 |        133        9.04      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab necessary
+(File sancot_results.doc already exists, option append was assumed)
+
+  necessary |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,345       91.37       91.37
+          1 |        127        8.63      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab sos
+(File sancot_results.doc already exists, option append was assumed)
+
+        sos |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,349       91.64       91.64
+          1 |        123        8.36      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab unwell
+(File sancot_results.doc already exists, option append was assumed)
+
+     unwell |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,380       93.75       93.75
+          1 |         92        6.25      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab newsymp
+(File sancot_results.doc already exists, option append was assumed)
+
+   new symp |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,392       94.57       94.57
+          1 |         80        5.43      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab safety_net
+(File sancot_results.doc already exists, option append was assumed)
+
+ safety_net |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,402       95.24       95.24
+          1 |         70        4.76      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab problem
+(File sancot_results.doc already exists, option append was assumed)
+
+    problem |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,415       96.13       96.13
+          1 |         57        3.87      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab change
+(File sancot_results.doc already exists, option append was assumed)
+
+     change |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,432       97.28       97.28
+          1 |         40        2.72      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. asdoc tab return_sx
+(File sancot_results.doc already exists, option append was assumed)
+
+  return_sx |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,446       98.23       98.23
+          1 |         26        1.77      100.00
+------------+-----------------------------------
+      Total |      1,472      100.00
+Click to Open File:  sancot_results.doc
+
+. 
+. clear
+
+. import excel "REDACTED\SaND-OOH\Stata\Final analysis\Excel exports\sancot_review_with 653_included.xlsx", sheet("persists") firstrow 
+(19 vars, 1,472 obs)
+
+. 
+. replace inb_not_fixed = 1 if inb_not_fixed >0
+(14 real changes made)
+
+. replace inb_fixed = 1 if inb_fixed >0
+(2 real changes made)
+
+. 
+. asdoc tab inb_fixed if inb_bin ==1
+(File sancot_results.doc already exists, option append was assumed)
+
+  inb_fixed |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        498       80.06       80.06
+          1 |        124       19.94      100.00
+------------+-----------------------------------
+      Total |        622      100.00
+Click to Open File:  sancot_results.doc
+
+. 
+.   
+. ********** PER PROBLEM ************
+. 
+. use "REDACTED\SaND-OOH\Stata\Final analysis\Dta\sancot_by_problems_final.dta", clear
+
+. 
+. asdoc, text(SANDOOH table 3 sancot results PER PROBLEMS) fs(15) save(sancot_results_problems)  replace
+(file sancot_results_problems.doc not found)
+Click to Open File:  sancot_results_problems.doc
+
+. 
+. asdoc tab sna_prob_tx
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+          sna_prob_tx |      Freq.     Percent        Cum.
+----------------------+-----------------------------------
+ Both (often generic) |        792       49.87       49.87
+         Problem only |        792       49.87       99.75
+Treatment / plan only |          4        0.25      100.00
+----------------------+-----------------------------------
+                Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_format
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+                             sna_format |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+Symptom / conditional  ONLY(red flags h |         60        3.78        3.78
+Symptom / conditional + action (if x do |      1,528       96.22      100.00
+----------------------------------------+-----------------------------------
+                                  Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. 
+. asdoc tab sna_specific
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+ sna_specific |      Freq.     Percent        Cum.
+--------------+-----------------------------------
+     Both G&S |        537       33.82       33.82
+ Generic only |        854       53.78       87.59
+Specific only |        197       12.41      100.00
+--------------+-----------------------------------
+        Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_action_notspecified
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+sna_action_ |
+notspecifie |
+          d |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,245       78.40       78.40
+          1 |        343       21.60      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_action_owngp
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+sna_action_ |
+      owngp |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,029       64.80       64.80
+          1 |        559       35.20      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_action_ooh
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+sna_action_ |
+        ooh |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |        544       34.26       34.26
+          1 |      1,044       65.74      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_action_999
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+sna_action_ |
+        999 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,397       87.97       87.97
+          1 |        191       12.03      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_action_other_bin
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+sna_action_ |
+  other_bin |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,561       98.30       98.30
+          1 |         27        1.70      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab no_of_actions
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+no_of_actio |
+         ns |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |         60        3.78        3.78
+          1 |        955       60.14       63.92
+          2 |        512       32.24       96.16
+          3 |         57        3.59       99.75
+          4 |          4        0.25      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_time_fixed
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+sna_time_fi |
+        xed |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,336       84.13       84.13
+          1 |        252       15.87      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_time_urgent       
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+sna_time_ur |
+       gent |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,505       94.77       94.77
+          1 |         83        5.23      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_time_fixed_or_urgent
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+sna_time_fi |
+xed_or_urge |
+         nt |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,275       80.29       80.29
+          1 |        292       18.39       98.68
+          2 |         21        1.32      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tab sna_written 
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+sna_written |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |      1,585       99.81       99.81
+          1 |          3        0.19      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. 
+. asdoc tab sna_no_sx
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+  sna_no_sx |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |        586       36.90       36.90
+          2 |        431       27.14       64.04
+          3 |        201       12.66       76.70
+          4 |        141        8.88       85.58
+          5 |         92        5.79       91.37
+          6 |         50        3.15       94.52
+          7 |         39        2.46       96.98
+          8 |         18        1.13       98.11
+          9 |         15        0.94       99.06
+         10 |          9        0.57       99.62
+         11 |          4        0.25       99.87
+         12 |          2        0.13      100.00
+------------+-----------------------------------
+      Total |      1,588      100.00
+Click to Open File:  sancot_results_problems.doc
+
+. asdoc tabstat sna_no_sx, stat(N min max mean sd median)
+(File sancot_results_problems.doc already exists, option append was assumed)
+
+             |         N        Min        Max       Mean         SD        p50 
+-------------+------------------------------------------------------------------
+   sna_no_sx |      1588          1         12   2.572418   1.930858          2 
+Click to Open File:  sancot_results_problems.doc
+
+. 
+. log close
+      name:  <unnamed>
+       log:  REDACTED\SaND-OOH\sancot_results.log
+  log type:  text
+ closed on:  30 Oct 2023, 18:28:13
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+  ___  ____  ____  ____  ____ ©
+ /__    /   ____/   /   ____/      17.0
+___/   /   /___/   /   /___/       MP—Parallel Edition
+
+ Statistics and Data Science       Copyright 1985-2021 StataCorp LLC
+                                   StataCorp
+                                   4905 Lakeway Drive
+                                   College Station, Texas 77845 USA
+                                   800-STATA-PC        https://www.stata.com
+                                   979-696-4600        stata@stata.com
+#redacted
+
+Running \Stata17\profile.do ...
+
+. doedit "REDACTEDStata\Final analysis\Do\sna_pres_models_final.do" 
+
+. do "REDACTEDStata\Final analysis\Do\sna_pres_models_final.do"
+
+. cd "REDACTEDStata\Final analysis\Reports"
+REDACTEDStata\Final analysis\Reports
+
+. use "REDACTEDStata\Final analysis\Dta\sandooh_final.dta", clear
+
+. drop if exclude ==1
+(514 observations deleted)
+
+. 
+. *UNIVARIABLE MODELS
+. asdoc, text(SANDOOH Models) fs(15) save(univariable_models) replace
+(file univariable_models.doc not found)
+Click to Open File:  univariable_models.doc
+
+. 
+. ***** external consultations factors ****
+. 
+. *Year
+. asdoc tab dateyear any_sna
+(File univariable_models.doc already exists, option append was assumed)
+
+           |      SNA Present
+  dateyear |         0          1 |     Total
+-----------+----------------------+----------
+      2013 |        41        104 |       145 
+      2014 |        72        224 |       296 
+      2015 |        61        238 |       299 
+      2016 |        65        233 |       298 
+      2017 |        69        217 |       286 
+      2018 |        48        199 |       247 
+      2019 |        50        220 |       270 
+      2020 |         8         37 |        45 
+-----------+----------------------+----------
+     Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: melogit any_sna dateyear 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+MEGLM formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1886        1.07        (1.01 to 1.13)     0.025
+-----------------------------------------------------------------------------------------
+Click to Open File:  univariable_models.doc
+
+. 
+. asdoc, text(Telephone calls by year) fs(12) 
+(File univariable_models.doc already exists, option append was assumed)
+Click to Open File:  univariable_models.doc
+
+. asdoc tab dateyear any_sna if contacttype ==0
+(File univariable_models.doc already exists, option append was assumed)
+
+           |      SNA Present
+  dateyear |         0          1 |     Total
+-----------+----------------------+----------
+      2013 |        14         20 |        34 
+      2014 |        20         58 |        78 
+      2015 |        23         57 |        80 
+      2016 |        26         52 |        78 
+      2017 |        25         52 |        77 
+      2018 |        16         39 |        55 
+      2019 |        18         47 |        65 
+      2020 |         5          8 |        13 
+-----------+----------------------+----------
+     Total |       147        333 |       480 
+Click to Open File:  univariable_models.doc
+
+. asdoc, text(Treatment centre by year) fs(12) 
+(File univariable_models.doc already exists, option append was assumed)
+Click to Open File:  univariable_models.doc
+
+. asdoc tab dateyear any_sna if contacttype ==1
+(File univariable_models.doc already exists, option append was assumed)
+
+           |      SNA Present
+  dateyear |         0          1 |     Total
+-----------+----------------------+----------
+      2013 |        11         44 |        55 
+      2014 |        19         90 |       109 
+      2015 |        20         92 |       112 
+      2016 |        14         96 |       110 
+      2017 |        17         93 |       110 
+      2018 |         8         89 |        97 
+      2019 |        13         85 |        98 
+      2020 |         1         13 |        14 
+-----------+----------------------+----------
+     Total |       103        602 |       705 
+Click to Open File:  univariable_models.doc
+
+. asdoc, text(Home visit by year) fs(12)
+(File univariable_models.doc already exists, option append was assumed)
+Click to Open File:  univariable_models.doc
+
+. asdoc tab dateyear any_sna if contacttype ==3
+(File univariable_models.doc already exists, option append was assumed)
+
+           |      SNA Present
+  dateyear |         0          1 |     Total
+-----------+----------------------+----------
+      2013 |        16         40 |        56 
+      2014 |        33         76 |       109 
+      2015 |        18         89 |       107 
+      2016 |        25         85 |       110 
+      2017 |        27         72 |        99 
+      2018 |        24         71 |        95 
+      2019 |        19         88 |       107 
+      2020 |         2         16 |        18 
+-----------+----------------------+----------
+     Total |       164        537 |       701 
+Click to Open File:  univariable_models.doc
+
+. 
+. *season
+. asdoc tab season any_sna
+(File univariable_models.doc already exists, option append was assumed)
+
+           |      SNA Present
+    season |         0          1 |     Total
+-----------+----------------------+----------
+    Winter |       113        395 |       508 
+    Spring |        97        335 |       432 
+    Summer |        97        365 |       462 
+    Autumn |       107        377 |       484 
+-----------+----------------------+----------
+     Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.season 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Season                                                                           
+  Winter*                                 508           1                                
+  Spring                                  432        0.99        (0.73 to 1.34)     0.939
+  Summer                                  462        1.08        (0.79 to 1.46)     0.637
+  Autumn                                  484        1.01        (0.75 to 1.36)     0.959
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. *Contact Type
+. asdoc tab f2f any_sna
+(File univariable_models.doc already exists, option append was assumed)
+
+                      |      SNA Present
+                  f2f |         0          1 |     Total
+----------------------+----------------------+----------
+            Telephone |       147        333 |       480 
+F2F = Tx Centre or HV |       267      1,139 |     1,406 
+----------------------+----------------------+----------
+                Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.f2f 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+F2f                                                                              
+  Telephone*                              480           1                                
+  F2F = Tx Centre or HV                  1406        1.88        (1.49 to 2.38)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. asdoc tab contacttype any_sna
+(File univariable_models.doc already exists, option append was assumed)
+
+                 |      SNA Present
+    contact_type |         0          1 |     Total
+-----------------+----------------------+----------
+       Telephone |       147        333 |       480 
+Treatment Centre |       103        602 |       705 
+      Home Visit |       164        537 |       701 
+-----------------+----------------------+----------
+           Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.contacttype 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Contact_type                                                                     
+  Telephone*                              480           1                                
+  Treatment Centre                        705        2.58        (1.94 to 3.43)    <0.001
+  Home Visit                              701        1.45        (1.11 to 1.88)     0.006
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. *** When treatment centre encounters were modelled as the baseline category, home visits were associated with reduced SNA frequencies in univariable modelling (OR=0.56, CI=0.42-0.73, p <0.001), but 
+> not multivariable modelling (OR=0.74, CI=0.46-1.18, p=0.21). ** didnt make final paper
+. quietly xi: logit any_sna i.contact_type2  
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Contact_type                                                                     
+  1. Treatment Centre*                    705           1                                
+  2. Telephone                            480        0.39        (0.29 to 0.52)    <0.001
+  3. Home Visit                           701        0.56        (0.43 to 0.74)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. ***** internal consultations factors ****
+. 
+. *follow up
+. asdoc tab any_fu any_sna
+(File univariable_models.doc already exists, option append was assumed)
+
+                  |      SNA Present
+Follow up present |         0          1 |     Total
+------------------+----------------------+----------
+     No follow-up |       167        888 |     1,055 
+Follow-up present |       247        584 |       831 
+------------------+----------------------+----------
+            Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.any_fu 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Follow up present                                                                
+  No follow-up*                          1055           1                                
+  Follow-up present                       831        0.44        (0.36 to 0.56)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. *prescription
+. asdoc tab prescription_bin any_sna
+(File univariable_models.doc already exists, option append was assumed)
+
+                      |      SNA Present
+     prescription_bin |         0          1 |     Total
+----------------------+----------------------+----------
+No prescription issue |       274        736 |     1,010 
+  Prescription issued |       140        736 |       876 
+----------------------+----------------------+----------
+                Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.prescription_bin 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Prescription_bin                                                                 
+  No prescription issued*                1010           1                                
+  Prescription issued                     876        1.96        (1.56 to 2.46)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. *Infection
+. asdoc tab infection any_sna
+(File univariable_models.doc already exists, option append was assumed)
+
+                      |      SNA Present
+            Infection |         0          1 |     Total
+----------------------+----------------------+----------
+Not possible infectio |       275        736 |     1,011 
+   Possible Infection |       139        736 |       875 
+----------------------+----------------------+----------
+                Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.infection 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Infection                                                                        
+  Not possible infection*                1011           1                                
+  Possible Infection                      875        1.98        (1.57 to 2.49)    <0.001
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. *mental health
+. asdoc tab mental_health any_sna
+(File univariable_models.doc already exists, option append was assumed)
+
+                      |      SNA Present
+        mental_health |         0          1 |     Total
+----------------------+----------------------+----------
+Physical health probl |       376      1,432 |     1,808 
+   Mental health only |        32         33 |        65 
+Mental & physical hea |         5          7 |        12 
+Only contains social  |         1          0 |         1 
+----------------------+----------------------+----------
+                Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.mental_health 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1885
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Mental_health                                                                    
+  Physical health problems*              1808           1                                
+  Mental health only                       65        0.27        (0.16 to 0.45)    <0.001
+  Mental & physical health                 12        0.37        (0.12 to 1.16)     0.089
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. ***** patient consultations factors ****
+. 
+. *pt age 65
+. asdoc tab pt_65 any_sna, missing
+(File univariable_models.doc already exists, option append was assumed)
+
+            |      SNA Present
+Patient Age |         0          1 |     Total
+------------+----------------------+----------
+16-64 Years |       203        837 |     1,040 
+  65+ Years |       211        635 |       846 
+------------+----------------------+----------
+      Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.pt_65 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Patient Age                                                                      
+  16-64 Years*                           1040           1                                
+  65+ Years                               846        0.73        (0.59 to 0.91)     0.005
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. *pt age 75
+. asdoc tab pt_75 any_sna
+(File univariable_models.doc already exists, option append was assumed)
+
+            |      SNA Present
+Patient Age |         0          1 |     Total
+------------+----------------------+----------
+16-74 Years |       246        985 |     1,231 
+  75+ Years |       168        487 |       655 
+------------+----------------------+----------
+      Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.pt_75 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35)
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1886
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Patient Age                                                                      
+  16-74 Years*                           1231           1                                
+  75+ Years                               655        0.72        (0.58 to 0.91)     0.005
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. *pt sex
+. asdoc tab sex any_sna, missing 
+(File univariable_models.doc already exists, option append was assumed)
+
+           |      SNA Present
+       sex |         0          1 |     Total
+-----------+----------------------+----------
+    Female |       255        935 |     1,190 
+      Male |       159        536 |       695 
+         . |         0          1 |         1 
+-----------+----------------------+----------
+     Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.sex 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1885
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Sex                                                                              
+  Female*                                1190           1                                
+  Male                                    695        0.92        (0.73 to 1.15)     0.464
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. 
+. *deprivation cat
+. asdoc tab pt_townsend any_sna, missing 
+(File univariable_models.doc already exists, option append was assumed)
+
+           |      SNA Present
+  townsend |         0          1 |     Total
+-----------+----------------------+----------
+         1 |        41        179 |       220 
+         2 |        54        205 |       259 
+         3 |        75        215 |       290 
+         4 |        81        278 |       359 
+         5 |       158        548 |       706 
+         . |         5         47 |        52 
+-----------+----------------------+----------
+     Total |       414      1,472 |     1,886 
+Click to Open File:  univariable_models.doc
+
+. quietly xi: logit any_sna i.pt_townsend 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1834
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Townsend                                                                         
+  1*                                      220           1                                
+  2                                       259        0.87        (0.55 to 1.37)     0.545
+  3                                       290        0.66        (0.43 to 1.01)     0.055
+  4                                       359        0.79        (0.52 to 1.20)     0.261
+  5                                       706        0.79        (0.54 to 1.16)     0.239
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  univariable_models.doc
+
+. test _Ipt_townse_2 _Ipt_townse_3 _Ipt_townse_4 _Ipt_townse_5
+
+ ( 1)  [any_sna]_Ipt_townse_2 = 0
+ ( 2)  [any_sna]_Ipt_townse_3 = 0
+ ( 3)  [any_sna]_Ipt_townse_4 = 0
+ ( 4)  [any_sna]_Ipt_townse_5 = 0
+
+           chi2(  4) =    4.14
+         Prob > chi2 =    0.3873
+
+. 
+. *deprivation lin
+. quietly xi: logit any_sna pt_townsend 
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+LOGIT formatted output
+
+Outcome variable: any_sna (SNA Present), n=1834
+-----------------------------------------------------------------------------------------
+Covariate                                   N  Odds Ratio    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Townsend                                                                         
+  per unit                               1834        0.97        (0.89 to 1.04)     0.386
+-----------------------------------------------------------------------------------------
+Click to Open File:  univariable_models.doc
+
+. 
+. 
+. ***********MULTIVARIABLE MODEL *********
+. asdoc, text(SANDOOH Models) fs(15) save(multivariable_models) replace
+(file multivariable_models.doc not found)
+Click to Open File:  multivariable_models.doc
+
+. 
+. drop if mental_health==3
+(1 observation deleted)
+
+. *as n=1 and omitted from models automatically and stops reformat code from working properly
+. 
+. *main used as table 5***
+. quietly xi: melogit any_sna dateyear i.season i.contacttype i.any_fu i.prescription_bin i.infection i.mental_health i.pt_65 i.sex i.pt_townsend  || clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: any_sna (SNA Present), n=1827
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1827        1.07        (0.99 to 1.16)     0.094
+Season                                                                           
+  Winter*                                 492           1                                
+  Spring                                  421        0.99        (0.67 to 1.46)     0.961
+  Summer                                  441        1.14        (0.77 to 1.67)     0.509
+  Autumn                                  473        1.15        (0.79 to 1.68)     0.468
+Contact_type                                                                     
+  Telephone*                              464           1                                
+  Treatment Centre                        685        1.77        (1.09 to 2.85)     0.020
+  Home Visit                              678        1.32        (0.87 to 1.98)     0.188
+Follow up present                                                                
+  No follow-up*                          1019           1                                
+  Follow-up present                       808        0.34        (0.25 to 0.46)    <0.001
+Prescription_bin                                                                 
+  No prescription issued*                 984           1                                
+  Prescription issued                     843        0.92        (0.64 to 1.34)     0.664
+Infection                                                                        
+  Not possible infection*                 980           1                                
+  Possible Infection                      847        1.53        (1.13 to 2.07)     0.006
+Mental_health                                                                    
+  Physical health problems*              1753           1                                
+  Mental health only                       62        0.33        (0.17 to 0.66)     0.002
+  Mental & physical health                 12        0.26        (0.06 to 1.09)     0.064
+Patient Age                                                                      
+  16-64 Years*                           1012           1                                
+  65+ Years                               815        0.86        (0.60 to 1.22)     0.393
+Sex                                                                              
+  Female*                                1150           1                                
+  Male                                    677        0.99        (0.75 to 1.32)     0.972
+Townsend                                                                         
+  1*                                      219           1                                
+  2                                       259        0.75        (0.43 to 1.30)     0.298
+  3                                       290        0.66        (0.39 to 1.12)     0.122
+  4                                       357        0.78        (0.46 to 1.31)     0.350
+  5                                       702        0.70        (0.44 to 1.13)     0.149
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  multivariable_models.doc
+
+. test _Ipt_townse_2 _Ipt_townse_3 _Ipt_townse_4 _Ipt_townse_5
+
+ ( 1)  [any_sna]_Ipt_townse_2 = 0
+ ( 2)  [any_sna]_Ipt_townse_3 = 0
+ ( 3)  [any_sna]_Ipt_townse_4 = 0
+ ( 4)  [any_sna]_Ipt_townse_5 = 0
+
+           chi2(  4) =    2.78
+         Prob > chi2 =    0.5946
+
+. *note pt 65 attenuated in multivariable due to contact type
+. 
+. *townsend as continuous - not used in paper
+. quietly xi: melogit any_sna dateyear i.season i.contacttype i.any_fu i.prescription_bin i.infection i.mental_health i.pt_65 i.sex pt_townsend  || clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: any_sna (SNA Present), n=1827
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1827        1.07        (0.99 to 1.16)     0.087
+Season                                                                           
+  Winter*                                 492           1                                
+  Spring                                  421        0.99        (0.67 to 1.46)     0.950
+  Summer                                  441        1.15        (0.78 to 1.69)     0.483
+  Autumn                                  473        1.16        (0.79 to 1.69)     0.449
+Contact_type                                                                     
+  Telephone*                              464           1                                
+  Treatment Centre                        685        1.79        (1.11 to 2.89)     0.017
+  Home Visit                              678        1.33        (0.88 to 1.99)     0.174
+Follow up present                                                                
+  No follow-up*                          1019           1                                
+  Follow-up present                       808        0.34        (0.25 to 0.45)    <0.001
+Prescription_bin                                                                 
+  No prescription issued*                 984           1                                
+  Prescription issued                     843        0.92        (0.63 to 1.33)     0.655
+Infection                                                                        
+  Not possible infection*                 980           1                                
+  Possible Infection                      847        1.52        (1.12 to 2.06)     0.007
+Mental_health                                                                    
+  Physical health problems*              1753           1                                
+  Mental health only                       62        0.34        (0.17 to 0.67)     0.002
+  Mental & physical health                 12        0.25        (0.06 to 1.07)     0.062
+Patient Age                                                                      
+  16-64 Years*                           1012           1                                
+  65+ Years                               815        0.86        (0.60 to 1.22)     0.391
+Sex                                                                              
+  Female*                                1150           1                                
+  Male                                    677        0.99        (0.75 to 1.32)     0.962
+Townsend                                                                         
+  per unit                               1827        0.95        (0.86 to 1.05)     0.309
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  multivariable_models.doc
+
+. 
+. **** age cat 75 **not used in paper
+. quietly xi: melogit any_sna dateyear i.season i.contacttype i.any_fu i.prescription_bin i.infection i.mental_health i.pt_75 i.sex i.pt_townsend  || clinician_id:
+
+. asdoc reformat, output(necp) dpp(3) eform dpcoef(2) append cw(35) 
+
+MEGLM formatted output
+
+Outcome variable: any_sna (SNA Present), n=1827
+-----------------------------------------------------------------------------------------
+Covariate                                   N  exp(coef.)    95% Conf. Interval     P>|z|
+-----------------------------------------------------------------------------------------
+Dateyear                                                                         
+  per unit                               1827        1.07        (0.99 to 1.16)     0.095
+Season                                                                           
+  Winter*                                 492           1                                
+  Spring                                  421        0.99        (0.67 to 1.47)     0.977
+  Summer                                  441        1.14        (0.78 to 1.68)     0.502
+  Autumn                                  473        1.15        (0.79 to 1.68)     0.460
+Contact_type                                                                     
+  Telephone*                              464           1                                
+  Treatment Centre                        685        1.73        (1.08 to 2.78)     0.024
+  Home Visit                              678        1.37        (0.91 to 2.06)     0.127
+Follow up present                                                                
+  No follow-up*                          1019           1                                
+  Follow-up present                       808        0.34        (0.25 to 0.46)    <0.001
+Prescription_bin                                                                 
+  No prescription issued*                 984           1                                
+  Prescription issued                     843        0.93        (0.64 to 1.35)     0.709
+Infection                                                                        
+  Not possible infection*                 980           1                                
+  Possible Infection                      847        1.53        (1.13 to 2.08)     0.006
+Mental_health                                                                    
+  Physical health problems*              1753           1                                
+  Mental health only                       62        0.33        (0.17 to 0.65)     0.001
+  Mental & physical health                 12        0.25        (0.06 to 1.08)     0.063
+Patient Age                                                                      
+  16-74 Years*                           1198           1                                
+  75+ Years                               629        0.76        (0.54 to 1.08)     0.127
+Sex                                                                              
+  Female*                                1150           1                                
+  Male                                    677        0.97        (0.73 to 1.29)     0.850
+Townsend                                                                         
+  1*                                      219           1                                
+  2                                       259        0.74        (0.43 to 1.29)     0.287
+  3                                       290        0.66        (0.39 to 1.12)     0.120
+  4                                       357        0.77        (0.46 to 1.30)     0.328
+  5                                       702        0.69        (0.43 to 1.12)     0.132
+-----------------------------------------------------------------------------------------
+* Baseline category
+Click to Open File:  multivariable_models.doc
+
+. 
+. 
+. 
+end of do-file
+
+. 
+
